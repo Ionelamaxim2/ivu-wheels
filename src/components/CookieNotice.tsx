@@ -123,8 +123,8 @@ export default function CookieNotice() {
               }}
             >
               We use cookies to enhance your browsing experience, serve
-              personalized content, and analyze our traffic. By clicking "I
-              understand", you consent to our use of cookies.
+              personalized content, and analyze our traffic. By clicking &quot;I
+              understand&quot;, you consent to our use of cookies.
             </p>
             <button
               onClick={handleAccept}
