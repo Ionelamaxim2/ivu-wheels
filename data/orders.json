@@ -178,5 +178,46 @@
     "shipping": 0,
     "total": 477,
     "status": "processing"
+  },
+  {
+    "id": "order_1754720294408",
+    "orderNumber": "IVU294408112",
+    "date": "2025-08-09T06:18:14.408Z",
+    "email": "ionelamaxim@gmail.com",
+    "address": "strada branduselor nr 22",
+    "city": "Cernavoda",
+    "postalCode": "",
+    "country": "eicdc",
+    "shippingMethod": "ground",
+    "paymentMethod": "credit",
+    "billingAddress": "same",
+    "items": [
+      {
+        "id": 3,
+        "name": "Deep Concave Gunmetal",
+        "price": 420,
+        "quantity": 1,
+        "image": "satinblackcustom.performance1.webp",
+        "buttonColor": "#5c5b57",
+        "cardBg": "#b6b5ad",
+        "size": "22",
+        "car": "Mercedes"
+      },
+      {
+        "id": 11,
+        "name": "SUPER DEEP CONCAVE - White Center / Sparkling Champagne Lip",
+        "price": 1375,
+        "quantity": 1,
+        "image": "pink.modular1.webp",
+        "buttonColor": "#ffd5df",
+        "cardBg": "#fff4f7",
+        "size": "21",
+        "car": "Mercedes"
+      }
+    ],
+    "subtotal": 1795,
+    "shipping": 0,
+    "total": 1795,
+    "status": "processing"
   }
 ]

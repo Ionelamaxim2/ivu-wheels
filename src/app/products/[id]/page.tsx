@@ -1089,9 +1089,13 @@ export default function ProductPage({ params }: ProductPageProps) {
             style={{
               display: isMobile ? "grid" : "flex",
               gridTemplateColumns: isMobile ? "1fr 1fr" : undefined,
+              gridTemplateRows: isMobile ? "1fr 1fr" : undefined,
               gap: isMobile ? "1rem" : "7rem",
               justifyContent: "center",
+              justifyItems: isMobile ? "center" : undefined,
               flexWrap: "wrap",
+              maxWidth: isMobile ? "100%" : undefined,
+              margin: isMobile ? "0 auto" : undefined,
               padding: isMobile ? "0 1rem" : "0",
             }}
           >

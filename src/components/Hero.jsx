@@ -1,12 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import "./HeroDesign.css";
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section className="hero-section">
       <video
+        key={isMobile ? "mobile" : "desktop"}
         className="hero-video-bg"
         autoPlay
         loop
@@ -21,7 +36,14 @@ export default function Hero() {
           objectPosition: "center 60%",
         }}
       >
-        <source src="/wheelsshop/HEROVIDEO.mp4" type="video/mp4" />
+        <source
+          src={
+            isMobile
+              ? "/wheelsshop/HEROVIDEO.mp4"
+              : "/wheelsshop/masinafundalpc.mp4"
+          }
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 

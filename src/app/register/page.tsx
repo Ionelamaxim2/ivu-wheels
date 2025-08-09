@@ -572,29 +572,21 @@ export default function RegisterPage() {
               )}
             </div>
 
-            <label
-              style={{
-                display: "flex",
-                alignItems: isMobile ? "flex-start" : "center",
-                gap: isMobile ? 6 : 8,
-                color: "rgba(255,255,255,0.9)",
-                fontSize: isMobile ? "0.85rem" : "0.9rem",
-                lineHeight: 1.4,
-              }}
-            >
+            <div className="checkbox-btn" style={{ marginBottom: "0" }}>
               <input
                 name="acceptTerms"
                 type="checkbox"
                 checked={formData.acceptTerms}
                 onChange={handleInputChange}
-                style={{
-                  width: isMobile ? 14 : 16,
-                  height: isMobile ? 14 : 16,
-                  marginTop: isMobile ? "2px" : "0",
-                  flexShrink: 0,
-                }}
               />
-              <span>
+              <span className="checkmark"></span>
+              <label
+                style={{
+                  color: "rgba(255,255,255,0.9)",
+                  fontSize: isMobile ? "0.85rem" : "0.9rem",
+                  lineHeight: 1.4,
+                }}
+              >
                 I agree to the{" "}
                 <Link
                   href="/terms"
@@ -632,8 +624,8 @@ export default function RegisterPage() {
                   Privacy Policy
                 </Link>{" "}
                 *
-              </span>
-            </label>
+              </label>
+            </div>
             {errors.acceptTerms && (
               <div
                 style={{

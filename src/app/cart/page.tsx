@@ -741,18 +741,19 @@ export default function CartPage() {
                   {formErrors.email}
                 </div>
               )}
-              <label
+              <div
+                className="checkbox-btn"
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  fontSize: "0.9rem",
-                  color: "#ccc",
+                  marginTop: isMobile ? "1rem" : "0",
+                  marginBottom: "0",
                 }}
               >
                 <input type="checkbox" />
-                Email me with news and offers
-              </label>
+                <span className="checkmark"></span>
+                <label style={{ fontSize: "0.9rem", color: "#ccc" }}>
+                  Email me with news and offers
+                </label>
+              </div>
               <p
                 style={{
                   fontSize: "0.8rem",
@@ -1034,24 +1035,22 @@ export default function CartPage() {
                 )}
               </div>
 
-              <label
+              <div
+                className="checkbox-btn"
                 style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "0.5rem",
-                  fontSize: "0.9rem",
-                  color: "#ccc",
-                  marginTop: "1rem",
+                  marginTop: isMobile ? "1.5rem" : "1rem",
+                  marginBottom: "0",
                 }}
               >
-                <input type="checkbox" style={{ marginTop: "0.2rem" }} />
-                <span>
+                <input type="checkbox" />
+                <span className="checkmark"></span>
+                <label style={{ fontSize: "0.9rem", color: "#ccc" }}>
                   TEXTS YOU&apos;LL WANT TO OPEN
                   <br />
                   SIGN UP FOR TEXT FROM IVU TO GET EARLY ACCESS TO NEW DROPS,
                   EXCLUSIVE DEALS & MORE
-                </span>
-              </label>
+                </label>
+              </div>
               <p
                 style={{
                   fontSize: "0.8rem",

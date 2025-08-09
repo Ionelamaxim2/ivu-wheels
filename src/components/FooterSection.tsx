@@ -1,8 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function FooterSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -13,26 +27,64 @@ export default function FooterSection() {
     <div
       style={{
         width: "100vw",
-        marginLeft: "calc(50% - 50vw)",
-        marginRight: "calc(50% - 50vw)",
+        marginLeft: isMobile ? "calc(50% - 50vw)" : "calc(50% - 50vw)",
+        marginRight: isMobile ? "calc(50% - 50vw)" : "calc(50% - 50vw)",
         backgroundColor: "#000000",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        paddingBottom: "2rem",
+        paddingLeft: isMobile ? "1rem" : "2rem",
+        paddingRight: isMobile ? "1rem" : "2rem",
+        paddingBottom: isMobile ? "0" : "2rem",
+        marginBottom: isMobile ? "0" : "auto",
       }}
     >
       <footer
         style={{
           borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-          paddingTop: "2rem",
+          paddingTop: isMobile ? "1.5rem" : "2rem",
+          paddingBottom: isMobile ? "1rem" : "0",
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          justifyContent: isMobile ? "center" : "space-between",
+          alignItems: isMobile ? "flex-start" : "center",
+          flexDirection: isMobile ? "column" : "row",
           flexWrap: "wrap",
-          gap: "2rem",
+          gap: isMobile ? "1.5rem" : "2rem",
           color: "#ccc",
+          position: "relative",
         }}
       >
+        {/* Scroll to top button - positioned at top right on mobile only */}
+        {isMobile && (
+          <button
+            onClick={scrollToTop}
+            style={{
+              position: "absolute",
+              top: "1rem",
+              right: "1rem",
+              background: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              borderRadius: "50%",
+              width: 35,
+              height: 35,
+              color: "white",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "all 0.2s ease",
+              fontSize: "1rem",
+              zIndex: 10,
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background =
+                "rgba(255, 255, 255, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background =
+                "rgba(255, 255, 255, 0.1)";
+            }}
+          >
+            ↑
+          </button>
+        )}
         <div>
           <div
             style={{
@@ -48,28 +100,60 @@ export default function FooterSection() {
               style={{ width: 40, height: 40 }}
             />
             <div>
-              <div style={{ fontWeight: "bold", color: "white" }}>
+              <div
+                style={{
+                  fontWeight: "bold",
+                  color: "white",
+                  fontSize: isMobile ? "1rem" : "1rem",
+                  lineHeight: "1.4",
+                }}
+              >
                 Strada Victoriei 45, Sector 1
               </div>
-              <div>Bucharest, Romania</div>
-              <div>010061</div>
+              <div
+                style={{
+                  fontSize: isMobile ? "0.95rem" : "1rem",
+                  lineHeight: "1.4",
+                  marginTop: "0.3rem",
+                }}
+              >
+                Bucharest, Romania
+              </div>
+              <div
+                style={{
+                  fontSize: isMobile ? "0.95rem" : "1rem",
+                  lineHeight: "1.4",
+                  marginTop: "0.2rem",
+                }}
+              >
+                010061
+              </div>
             </div>
           </div>
-          <div style={{ fontSize: "0.9rem" }}>
-            <div>+40 21 315 8742</div>
+          <div style={{ fontSize: isMobile ? "1rem" : "0.95rem" }}>
+            <div style={{ marginBottom: "0.4rem" }}>+40 21 315 8742</div>
             <div>contact@ivuwheels.ro</div>
           </div>
         </div>
 
         <div style={{ display: "flex", gap: "3rem" }}>
           <div>
-            <div style={{ color: "white", marginBottom: "1rem" }}>Menu</div>
+            <div
+              style={{
+                color: "white",
+                marginBottom: isMobile ? "1.2rem" : "1rem",
+                fontSize: isMobile ? "1.1rem" : "1rem",
+                fontWeight: "500",
+              }}
+            >
+              Menu
+            </div>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.5rem",
-                fontSize: "0.9rem",
+                gap: isMobile ? "0.8rem" : "0.5rem",
+                fontSize: isMobile ? "1rem" : "0.9rem",
               }}
             >
               <Link
@@ -105,13 +189,22 @@ export default function FooterSection() {
             </div>
           </div>
           <div>
-            <div style={{ color: "white", marginBottom: "1rem" }}>Social</div>
+            <div
+              style={{
+                color: "white",
+                marginBottom: isMobile ? "1.2rem" : "1rem",
+                fontSize: isMobile ? "1.1rem" : "1rem",
+                fontWeight: "500",
+              }}
+            >
+              Social
+            </div>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.5rem",
-                fontSize: "0.9rem",
+                gap: isMobile ? "0.8rem" : "0.5rem",
+                fontSize: isMobile ? "1rem" : "0.9rem",
               }}
             >
               <a
@@ -142,44 +235,48 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div style={{ textAlign: "right" }}>
-          <button
-            onClick={scrollToTop}
-            style={{
-              background: "rgba(255, 255, 255, 0.1)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
-              borderRadius: "50%",
-              width: 40,
-              height: 40,
-              color: "white",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "all 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "rgba(255, 255, 255, 0.2)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "rgba(255, 255, 255, 0.1)";
-            }}
-          >
-            ↑
-          </button>
-        </div>
+        {!isMobile && (
+          <div style={{ textAlign: "right" }}>
+            <button
+              onClick={scrollToTop}
+              style={{
+                background: "rgba(255, 255, 255, 0.1)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                borderRadius: "50%",
+                width: 40,
+                height: 40,
+                color: "white",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background =
+                  "rgba(255, 255, 255, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background =
+                  "rgba(255, 255, 255, 0.1)";
+              }}
+            >
+              ↑
+            </button>
+          </div>
+        )}
       </footer>
 
       <div
         style={{
           textAlign: "center",
-          marginTop: "2rem",
-          fontSize: "0.8rem",
+          marginTop: isMobile ? "1.5rem" : "2rem",
+          fontSize: isMobile ? "0.9rem" : "0.8rem",
           color: "#666",
           backgroundColor: "#000000",
-          padding: "1rem",
+          padding: isMobile ? "1.2rem 0" : "1rem",
+          marginBottom: "0",
+          lineHeight: "1.4",
         }}
       >
         © 2024 Ivu Wheels. All rights reserved.
