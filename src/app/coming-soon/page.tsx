@@ -92,7 +92,7 @@ export default function ComingSoonPage() {
             fontWeight: "300",
           }}
         >
-          We're working hard to bring you an amazing social experience.
+          We&apos;re working hard to bring you an amazing social experience.
           <br />
           Stay tuned for updates!
         </p>

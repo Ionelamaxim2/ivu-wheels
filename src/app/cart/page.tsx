@@ -1046,7 +1046,7 @@ export default function CartPage() {
               >
                 <input type="checkbox" style={{ marginTop: "0.2rem" }} />
                 <span>
-                  TEXTS YOU'LL WANT TO OPEN
+                  TEXTS YOU&apos;LL WANT TO OPEN
                   <br />
                   SIGN UP FOR TEXT FROM IVU TO GET EARLY ACCESS TO NEW DROPS,
                   EXCLUSIVE DEALS & MORE

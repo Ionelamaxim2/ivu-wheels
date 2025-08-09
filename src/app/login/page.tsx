@@ -362,7 +362,7 @@ export default function LoginPage() {
                 fontSize: isMobile ? "0.85rem" : "0.9rem",
               }}
             >
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link
                 href="/register"
                 style={{
