@@ -701,7 +701,7 @@ export default function PaymentPage() {
                         fontWeight: "600",
                       }}
                     >
-                      ${item.price} x {item.quantity}
+                      €{item.price} x {item.quantity}
                     </p>
                   </div>
                 </div>
@@ -734,7 +734,7 @@ export default function PaymentPage() {
                 }}
               >
                 <span>SUBTOTAL</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>€{subtotal.toFixed(2)}</span>
               </div>
               <div
                 style={{
@@ -746,7 +746,7 @@ export default function PaymentPage() {
                 }}
               >
                 <span>SHIPPING</span>
-                <span>${shipping.toFixed(2)}</span>
+                <span>€{shipping.toFixed(2)}</span>
               </div>
               <div
                 style={{
@@ -759,7 +759,7 @@ export default function PaymentPage() {
                 }}
               >
                 <span>TOTAL</span>
-                <span>${total.toFixed(2)}</span>
+                <span>€{total.toFixed(2)}</span>
               </div>
             </div>
           </div>

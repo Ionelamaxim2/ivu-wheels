@@ -382,7 +382,7 @@ export default function ShippingPage() {
                     />
                     <span>GROUND SHIPPING</span>
                   </div>
-                  <span style={{ fontWeight: "bold" }}>$10</span>
+                  <span style={{ fontWeight: "bold" }}>€10</span>
                 </label>
               </div>
             </div>
@@ -510,7 +510,7 @@ export default function ShippingPage() {
                         fontWeight: "600",
                       }}
                     >
-                      ${item.price} x {item.quantity}
+                      €{item.price} x {item.quantity}
                     </p>
                   </div>
                 </div>
@@ -543,7 +543,7 @@ export default function ShippingPage() {
                 }}
               >
                 <span>SUBTOTAL</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>€{subtotal.toFixed(2)}</span>
               </div>
               <div
                 style={{
@@ -555,7 +555,7 @@ export default function ShippingPage() {
                 }}
               >
                 <span>SHIPPING</span>
-                <span>${shipping.toFixed(2)}</span>
+                <span>€{shipping.toFixed(2)}</span>
               </div>
               <div
                 style={{
@@ -568,7 +568,7 @@ export default function ShippingPage() {
                 }}
               >
                 <span>TOTAL</span>
-                <span>${total.toFixed(2)}</span>
+                <span>€{total.toFixed(2)}</span>
               </div>
             </div>
           </div>

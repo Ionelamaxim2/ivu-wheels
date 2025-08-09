@@ -1298,7 +1298,7 @@ function OrderSummary({
                 }}
               >
                 <div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
-                  ${item.price * item.quantity}
+                  €{item.price * item.quantity}
                 </div>
                 <button
                   onClick={() => onRemove(item.id)}
@@ -1333,7 +1333,7 @@ function OrderSummary({
               }}
             >
               <span>SUBTOTAL</span>
-              <span>${subtotal}</span>
+              <span>€{subtotal}</span>
             </div>
             <div
               style={{
@@ -1358,7 +1358,7 @@ function OrderSummary({
               }}
             >
               <span>TOTAL</span>
-              <span>${total}</span>
+              <span>€{total}</span>
             </div>
           </div>
         </>

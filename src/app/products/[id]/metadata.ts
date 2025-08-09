@@ -16,7 +16,7 @@ export function generateMetadata({ params }: GenerateMetadataProps): Metadata {
   }
 
   const title = `${wheel.name} - ${wheel.category} Wheel | IVU Wheels`;
-  const description = `Shop the ${wheel.name} from our ${wheel.category} collection. Premium custom wheel priced at $${wheel.price}. Free shipping available. Transform your vehicle today.`;
+  const description = `Shop the ${wheel.name} from our ${wheel.category} collection. Premium custom wheel priced at €${wheel.price}. Free shipping available. Transform your vehicle today.`;
   const imageUrl = `/wheels2/${wheel.images[0]}`;
 
   return {

@@ -49,15 +49,15 @@ export default function FooterSection() {
             />
             <div>
               <div style={{ fontWeight: "bold", color: "white" }}>
-                123 Market St. #228
+                Strada Victoriei 45, Sector 1
               </div>
-              <div>Charlottesville, California</div>
-              <div>44635</div>
+              <div>Bucharest, Romania</div>
+              <div>010061</div>
             </div>
           </div>
           <div style={{ fontSize: "0.9rem" }}>
-            <div>(434) 546-4350</div>
-            <div>contact@ivuwheels</div>
+            <div>+40 21 315 8742</div>
+            <div>contact@ivuwheels.ro</div>
           </div>
         </div>
 

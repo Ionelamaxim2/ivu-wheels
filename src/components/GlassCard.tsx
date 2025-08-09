@@ -160,7 +160,7 @@ const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
                 textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
               }}
             >
-              ${wheel?.price || "599"}
+              €{wheel?.price || "599"}
             </span>
           </div>
 

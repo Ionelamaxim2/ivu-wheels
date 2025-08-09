@@ -445,7 +445,7 @@ export default function ProductsPage() {
                   margin: 0,
                 }}
               >
-                ${wheel.price}
+                €{wheel.price}
               </p>
             </Link>
           ))}

@@ -280,7 +280,7 @@ export default function ConfirmationPage() {
                       </div>
                     </div>
                     <div style={{ fontWeight: 700 }}>
-                      ${item.price * item.quantity}
+                      €{item.price * item.quantity}
                     </div>
                   </div>
                 ))
@@ -324,7 +324,7 @@ export default function ConfirmationPage() {
               }}
             >
               <span style={{ color: "#aaa" }}>Subtotal</span>
-              <span>${total}</span>
+              <span>€{total}</span>
             </div>
             <div
               style={{
@@ -347,7 +347,7 @@ export default function ConfirmationPage() {
               }}
             >
               <span>TOTAL</span>
-              <span>${total}</span>
+              <span>€{total}</span>
             </div>
 
             <div

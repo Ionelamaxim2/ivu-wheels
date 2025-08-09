@@ -1203,7 +1203,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                                 : "0 2px 8px rgba(255, 255, 255, 0.3)",
                           }}
                         >
-                          ${similarWheel.price}
+                          €{similarWheel.price}
                         </span>
                       </div>
                       <div
