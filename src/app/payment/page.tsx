@@ -793,7 +793,13 @@ export default function PaymentPage() {
       />
 
       {/* Footer */}
-      <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "2rem" }}>
+      <div
+        style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          padding: isMobile ? "0" : "2rem",
+        }}
+      >
         <div style={{ marginTop: "auto" }}>
           <FooterSection />
         </div>

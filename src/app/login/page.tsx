@@ -255,15 +255,22 @@ export default function LoginPage() {
               gap: isMobile ? "0.8rem" : "0",
             }}
           >
-            <label className="checkbox-btn" style={{ marginBottom: "0" }}>
-              <label htmlFor="remember-checkbox"></label>
-              <input
-                id="remember-checkbox"
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-              />
-              <span className="checkmark"></span>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0",
+                marginBottom: "0",
+              }}
+            >
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                <div className="checkmark"></div>
+              </label>
               <span
                 style={{
                   color: "rgba(255, 255, 255, 0.8)",
@@ -272,7 +279,7 @@ export default function LoginPage() {
               >
                 Remember me
               </span>
-            </label>
+            </div>
             <Link
               href="/forgot-password"
               style={{

@@ -742,17 +742,21 @@ export default function CartPage() {
                 </div>
               )}
               <div
-                className="checkbox-btn"
                 style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0",
                   marginTop: isMobile ? "1rem" : "0",
                   marginBottom: "0",
                 }}
               >
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-                <label style={{ fontSize: "0.9rem", color: "#ccc" }}>
-                  Email me with news and offers
+                <label className="container">
+                  <input type="checkbox" />
+                  <div className="checkmark"></div>
                 </label>
+                <span style={{ fontSize: "0.9rem", color: "#ccc" }}>
+                  Email me with news and offers
+                </span>
               </div>
               <p
                 style={{
@@ -1036,20 +1040,24 @@ export default function CartPage() {
               </div>
 
               <div
-                className="checkbox-btn"
                 style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0",
                   marginTop: isMobile ? "1.5rem" : "1rem",
                   marginBottom: "0",
                 }}
               >
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-                <label style={{ fontSize: "0.9rem", color: "#ccc" }}>
+                <label className="container">
+                  <input type="checkbox" />
+                  <div className="checkmark"></div>
+                </label>
+                <span style={{ fontSize: "0.9rem", color: "#ccc" }}>
                   TEXTS YOU&apos;LL WANT TO OPEN
                   <br />
                   SIGN UP FOR TEXT FROM IVU TO GET EARLY ACCESS TO NEW DROPS,
                   EXCLUSIVE DEALS & MORE
-                </label>
+                </span>
               </div>
               <p
                 style={{

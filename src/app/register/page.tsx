@@ -572,15 +572,24 @@ export default function RegisterPage() {
               )}
             </div>
 
-            <div className="checkbox-btn" style={{ marginBottom: "0" }}>
-              <input
-                name="acceptTerms"
-                type="checkbox"
-                checked={formData.acceptTerms}
-                onChange={handleInputChange}
-              />
-              <span className="checkmark"></span>
-              <label
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "0",
+                marginBottom: "0",
+              }}
+            >
+              <label className="container">
+                <input
+                  name="acceptTerms"
+                  type="checkbox"
+                  checked={formData.acceptTerms}
+                  onChange={handleInputChange}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span
                 style={{
                   color: "rgba(255,255,255,0.9)",
                   fontSize: isMobile ? "0.85rem" : "0.9rem",
@@ -624,7 +633,7 @@ export default function RegisterPage() {
                   Privacy Policy
                 </Link>{" "}
                 *
-              </label>
+              </span>
             </div>
             {errors.acceptTerms && (
               <div
