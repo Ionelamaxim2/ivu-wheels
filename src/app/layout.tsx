@@ -93,9 +93,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
 
-        <link rel="prefetch" href="/wheels2/" />
-        <link rel="prefetch" href="/wheelsshop/" />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

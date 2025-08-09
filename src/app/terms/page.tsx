@@ -99,7 +99,12 @@ export default function TermsPage() {
           }}
         >
           <p style={{ marginBottom: "1.5rem", color: "#ccc" }}>
-            Last updated: {new Date().toLocaleDateString()}
+            Last updated:{" "}
+            {new Date().toLocaleDateString("ro-RO", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })}
           </p>
 
           <h2

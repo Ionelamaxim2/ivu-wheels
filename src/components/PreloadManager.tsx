@@ -125,16 +125,17 @@ export function CriticalPreloader() {
     criticalImages.forEach((src) => {
       const link = document.createElement("link");
       link.rel = "preload";
-      link.as = src.endsWith(".svg") ? "image" : "image";
+      link.as = "image";
       link.href = src;
       document.head.appendChild(link);
     });
 
     const fontLink = document.createElement("link");
     fontLink.rel = "preload";
-    fontLink.as = "style";
+    fontLink.as = "font";
     fontLink.href =
       "https://fonts.googleapis.com/css2?family=Gruppo:wght@400;700&display=swap";
+    fontLink.crossOrigin = "anonymous";
     document.head.appendChild(fontLink);
   }, []);
 
