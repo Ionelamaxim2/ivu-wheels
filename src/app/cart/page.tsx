@@ -754,7 +754,12 @@ export default function CartPage() {
                   <input type="checkbox" />
                   <div className="checkmark"></div>
                 </label>
-                <span style={{ fontSize: "0.9rem", color: "#ccc" }}>
+                <span
+                  style={{
+                    fontSize: "0.9rem",
+                    color: "#ccc",
+                  }}
+                >
                   Email me with news and offers
                 </span>
               </div>
@@ -1042,13 +1047,21 @@ export default function CartPage() {
               <div
                 style={{
                   display: "flex",
-                  alignItems: "flex-start",
+                  alignItems: "center",
                   gap: "0",
                   marginTop: isMobile ? "1.5rem" : "1rem",
                   marginBottom: "0",
                 }}
               >
-                <label className="container">
+                <label
+                  className="container"
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    minWidth: "20px",
+                    minHeight: "20px",
+                  }}
+                >
                   <input type="checkbox" />
                   <div className="checkmark"></div>
                 </label>

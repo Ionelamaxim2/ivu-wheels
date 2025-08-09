@@ -19,7 +19,7 @@ export default function ProductsPage() {
   const categories = ["All", "Performance", "Flow", "Modular"];
   const modelGroups = ["Flow", "Performance", "Modular"];
   const carBrands = ["All", "BMW", "Mercedes", "Audi", "VW", "Seat"];
-  const sizes = ["All", "17", "18", "19", "20", "21", "22"];
+  const sizes = ["All", "19", "21", "22"];
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -312,7 +312,7 @@ export default function ProductsPage() {
                 CAR BRAND
               </h3>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                {carBrands.slice(0, 3).map((brand) => (
+                {carBrands.map((brand) => (
                   <button
                     key={brand}
                     onClick={() => setFilters({ ...filters, carBrand: brand })}
@@ -347,7 +347,7 @@ export default function ProductsPage() {
                 SIZE
               </h3>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                {sizes.slice(0, 4).map((size) => (
+                {sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setFilters({ ...filters, size })}
