@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# IVU Wheels
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IVU Wheels is an online car wheels shop built with Next.js 14, TypeScript, and React. The project uses a modern structure, optimized for performance, SEO, and mobile experience.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **Next.js 14** (App Router)
+- **React 18**
+- **TypeScript**
+- **Tailwind CSS** (custom, if `tailwind.config.js` is present)
+- **Node.js** (for API routes and server)
+- **Context API & custom hooks** (for state management)
+- **Smart preloading/prefetching for images and routes**
+- **Image optimization** (custom component + Next.js)
+- **Deploy on Render** (or Vercel)
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `src/app/` - main pages (Next.js App Router)
+- `src/components/` - reusable components (Navbar, Hero, Card, etc)
+- `src/data/` - static/demo product data
+- `src/lib/` - utilities, store, auth functions
+- `public/` - images, video, favicon, etc
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation & Local Development
 
-### `npm test`
+1. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Build & Deploy
 
-### `npm run build`
+### Local Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Deploy on Render
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Push your code to GitHub.
+2. Create a new service on [Render.com](https://render.com/):
+   - Environment: Node
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+   - Root Directory: (leave empty if Next.js is in root)
+3. Add environment variables if needed (e.g. Stripe, DB, etc).
+4. Click "Create Web Service" and wait for the build to finish.
 
-### `npm run eject`
+### Deploy on Vercel (optional)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- You can use [Vercel](https://vercel.com/) for fast deploy, with direct GitHub import.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Environment Variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you use environment variables, create a `.env.local` file with:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+NEXT_PUBLIC_API_URL=...
+OTHER_VAR=...
+```
 
-## Learn More
+## Note for Collaborators
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The codebase is cleaned of comments and unused files.
+- For any major changes, use a separate branch.
+- Please follow the existing structure and conventions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Useful Resources
 
-### Code Splitting
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Render Documentation](https://render.com/docs/deploy-node-express-app)
+- [Vercel Documentation](https://vercel.com/docs)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**For questions or contributions, open an issue or contact me!**

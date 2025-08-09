@@ -1,0 +1,29 @@
+[
+  {
+    "id": "d6dc1d77-4556-4daf-850d-e217f1dff554",
+    "email": "test@example.com",
+    "firstName": "Test",
+    "lastName": "User",
+    "createdAt": "2025-08-08T23:11:36.621Z",
+    "passwordSalt": "6c72b6cacf4ee0db1f4368e0b50e0b49",
+    "passwordHash": "08e22363810a48a90c0426cbb9dacb335a02062ed52d47997ce162a4ae0be6bb3bde7293a0b5af694eb874c80e23c9b891e9b5c3eebde58670e3f5e537c1e43f"
+  },
+  {
+    "id": "089e1456-3a35-4c28-a2ef-e27ac9453a72",
+    "email": "ionela@gmail.com",
+    "firstName": "Ionela",
+    "lastName": "Maxim",
+    "createdAt": "2025-08-08T23:16:14.313Z",
+    "passwordSalt": "2c7a70bc4c45968b1727ce5276bb6bac",
+    "passwordHash": "c4df9d14554dda3fef51ee1f66d2ec86c609bca24187ef5062dc43a2da57121e312eb11a8f224f4de6c6ab11ad24260c5954181905902c4e8db24c6ea6091875"
+  },
+  {
+    "id": "70f20c42-ff42-4d5f-8a91-ed67ae2b3932",
+    "email": "ionelamaxim@gmail.com",
+    "firstName": "Ionela",
+    "lastName": "Maxim",
+    "createdAt": "2025-08-09T02:59:09.391Z",
+    "passwordSalt": "5f405aeba8e2471b6d09f2c0fcb85051",
+    "passwordHash": "1c5c0196616b40139fc6a5d5d462c25437c2e9ba42bec2234703893a562b0915653512e98ff7adbe066c9bb5f0a90cfdb291ad440c15afb7a1c481ca00e576dc"
+  }
+]
