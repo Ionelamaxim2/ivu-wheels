@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-import Image from "next/image";
+// Using plain img for compatibility with hosting image optimizer
 import FooterSection from "@/components/FooterSection";
 import { cartStore } from "../../../lib/cartStore";
 import ProductStructuredData from "../../../components/ProductStructuredData";
@@ -526,29 +526,23 @@ export default function ProductPage({ params }: ProductPageProps) {
                   zIndex: 2,
                 }}
               >
-                <div
+                <img
+                  src={`/wheels2/${
+                    wheel.images[
+                      selectedImage > 0
+                        ? selectedImage - 1
+                        : wheel.images.length - 1
+                    ]
+                  }`}
+                  alt="Previous"
+                  loading="lazy"
+                  decoding="async"
                   style={{
-                    position: "relative",
                     width: "100%",
                     height: "100%",
+                    objectFit: "contain",
                   }}
-                >
-                  <Image
-                    src={`/wheels2/${
-                      wheel.images[
-                        selectedImage > 0
-                          ? selectedImage - 1
-                          : wheel.images.length - 1
-                      ]
-                    }`}
-                    alt="Previous"
-                    fill
-                    sizes="(max-width:768px) 120px, 450px"
-                    style={{ objectFit: "contain" }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+                />
               </div>
 
               {/* Main Image (Center) */}
@@ -566,23 +560,17 @@ export default function ProductPage({ params }: ProductPageProps) {
                   zIndex: 3,
                 }}
               >
-                <div
+                <img
+                  src={`/wheels2/${wheel.images[selectedImage]}`}
+                  alt={wheel.name}
+                  loading="eager"
+                  decoding="async"
                   style={{
-                    position: "relative",
                     width: "100%",
                     height: "100%",
+                    objectFit: "contain",
                   }}
-                >
-                  <Image
-                    src={`/wheels2/${wheel.images[selectedImage]}`}
-                    alt={wheel.name}
-                    fill
-                    priority
-                    sizes="(max-width:768px) 300px, 600px"
-                    style={{ objectFit: "contain" }}
-                    decoding="async"
-                  />
-                </div>
+                />
               </div>
 
               {/* Next Image (Right) */}
@@ -600,29 +588,23 @@ export default function ProductPage({ params }: ProductPageProps) {
                   zIndex: 2,
                 }}
               >
-                <div
+                <img
+                  src={`/wheels2/${
+                    wheel.images[
+                      selectedImage < wheel.images.length - 1
+                        ? selectedImage + 1
+                        : 0
+                    ]
+                  }`}
+                  alt="Next"
+                  loading="lazy"
+                  decoding="async"
                   style={{
-                    position: "relative",
                     width: "100%",
                     height: "100%",
+                    objectFit: "contain",
                   }}
-                >
-                  <Image
-                    src={`/wheels2/${
-                      wheel.images[
-                        selectedImage < wheel.images.length - 1
-                          ? selectedImage + 1
-                          : 0
-                      ]
-                    }`}
-                    alt="Next"
-                    fill
-                    sizes="(max-width:768px) 120px, 450px"
-                    style={{ objectFit: "contain" }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+                />
               </div>
             </div>
 
@@ -1277,14 +1259,17 @@ export default function ProductPage({ params }: ProductPageProps) {
                               "linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))",
                           }}
                         >
-                          <Image
+                          <img
                             src={`/wheels2/${similarWheel.images[0]}`}
                             alt={similarWheel.name}
-                            fill
-                            sizes={isMobile ? "150px" : "290px"}
-                            style={{ objectFit: "contain", padding: "10px" }}
                             loading="lazy"
                             decoding="async"
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "contain",
+                              padding: "10px",
+                            }}
                           />
                           <div
                             style={{

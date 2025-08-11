@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    unoptimized: true,
   },
   async headers() {
     return [
@@ -27,8 +28,8 @@ const nextConfig = {
               "default-src 'self'",
               "img-src 'self' data: blob:",
               "media-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // relaxed for dev; tighten for prod
-              "style-src 'self' 'unsafe-inline'", // inline styles used
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",
               "connect-src 'self'",
               "frame-ancestors 'none'",

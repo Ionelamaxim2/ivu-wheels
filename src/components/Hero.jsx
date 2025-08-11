@@ -21,17 +21,22 @@ export default function Hero() {
   return (
     <section className="hero-section">
       {isMobile ? (
-        <img
-          src="/wheelsshop/masinafundal1.webp"
-          alt="IVU Wheels hero"
+        <video
           className="hero-video-bg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/wheelsshop/masinafundal1.webp"
           style={{ objectFit: "cover", objectPosition: "center 60%" }}
-          loading="eager"
-          decoding="async"
-        />
+          disablePictureInPicture
+        >
+          <source src="/wheelsshop/HEROVIDEO.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       ) : (
         <video
-          key={isMobile ? "mobile" : "desktop"}
           className="hero-video-bg"
           autoPlay
           loop
@@ -40,12 +45,14 @@ export default function Hero() {
           preload="metadata"
           poster="/wheelsshop/masinafundal1.webp"
           style={{
+            filter:
+              "grayscale(0.8) contrast(1.2) brightness(0.9) saturate(0.3)",
             objectFit: "cover",
             objectPosition: "center 60%",
           }}
           disablePictureInPicture
         >
-          <source src={"/wheelsshop/masinafundalpc.mp4"} type="video/mp4" />
+          <source src="/wheelsshop/masinafundalpc.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}

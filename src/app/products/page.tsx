@@ -2,7 +2,7 @@
 
 import { wheels } from "@/data/wheels";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import FooterSection from "@/components/FooterSection";
 import { useState, useEffect } from "react";
 
@@ -427,19 +427,14 @@ export default function ProductsPage() {
                   background: "#f5f5f5",
                 }}
               >
-                <Image
+                <img
                   src={`/wheels2/${getFirstImage(wheel.images)}`}
                   alt={wheel.name}
                   width={400}
                   height={400}
-                  priority={index === 0}
-                  loading={index === 0 ? undefined : "lazy"}
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  decoding="async"
                 />
               </div>
               <h3
