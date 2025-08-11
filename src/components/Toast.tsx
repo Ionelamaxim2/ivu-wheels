@@ -60,8 +60,6 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
     const id = Math.random().toString(36).substr(2, 9);
     const newToast = { ...toast, id };
     setToasts((prev) => [...prev, newToast]);
-
-    // Auto remove after duration
     setTimeout(() => {
       removeToast(id);
     }, toast.duration || 3000);

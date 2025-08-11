@@ -15,8 +15,6 @@ export default function UserPage() {
   const [lastName, setLastName] = useState<string | undefined>(undefined);
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [isMobile, setIsMobile] = useState(false);
-
-  // Mobile detection
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();

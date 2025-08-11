@@ -14,8 +14,6 @@ export default function PaymentPage() {
   const [cartItems, setCartItems] = useState<any[]>([]);
   const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
-
-  // Calculate totals
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0

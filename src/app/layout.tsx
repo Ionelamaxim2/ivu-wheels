@@ -4,8 +4,6 @@ import "./globals.css";
 import ClientLayout from "../components/ClientLayout";
 
 const inter = Inter({ subsets: ["latin"] });
-
-// Site URL for SEO (falls back to localhost in dev)
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
 
 export const metadata: Metadata = {

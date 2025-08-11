@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-// @ts-ignore: imageCache may not have type declarations
 import { imageCache } from "../lib/cache";
 
 interface PreloadManagerProps {
@@ -17,7 +16,6 @@ export default function PreloadManager({
 }: PreloadManagerProps) {
   useEffect(() => {
     if (!priority) {
-      // Delay non-priority preloading
       const timer = setTimeout(() => {
         preloadResources();
       }, 2000);

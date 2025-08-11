@@ -193,8 +193,6 @@ export default function CartPage() {
             setIsLoaded(true);
             return;
           }
-
-          // Finally try sessionStorage
           const savedCartSession = sessionStorage.getItem("cart");
           console.log("Saved cart from sessionStorage:", savedCartSession);
 
@@ -218,8 +216,6 @@ export default function CartPage() {
     };
 
     loadCart();
-
-    // Add global functions for testing
     (window as any).testCart = () => {
       console.log("=== MANUAL CART TEST ===");
       console.log("Cart store items:", cartStore.getItems());

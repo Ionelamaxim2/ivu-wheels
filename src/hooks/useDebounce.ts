@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-
-// Debounce hook - delays execution until after delay
 export function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
 
@@ -18,8 +16,6 @@ export function useDebounce<T>(value: T, delay: number): T {
 
   return debouncedValue;
 }
-
-// Debounced callback hook
 export function useDebouncedCallback<T extends (...args: any[]) => any>(
   callback: T,
   delay: number
@@ -49,8 +45,6 @@ export function useDebouncedCallback<T extends (...args: any[]) => any>(
 
   return debouncedCallback as T;
 }
-
-// Throttle hook - limits execution to once per delay period
 export function useThrottle<T>(value: T, delay: number): T {
   const [throttledValue, setThrottledValue] = useState<T>(value);
   const lastExecuted = useRef<number>(Date.now());
@@ -71,8 +65,6 @@ export function useThrottle<T>(value: T, delay: number): T {
 
   return throttledValue;
 }
-
-// Throttled callback hook
 export function useThrottledCallback<T extends (...args: any[]) => any>(
   callback: T,
   delay: number
@@ -92,8 +84,6 @@ export function useThrottledCallback<T extends (...args: any[]) => any>(
 
   return throttledCallback as T;
 }
-
-// Search hook with debouncing
 export function useSearch<T>(
   items: T[],
   searchTerm: string,
@@ -112,8 +102,6 @@ export function useSearch<T>(
     }
 
     setIsSearching(true);
-
-    // Simulate async search with setTimeout to avoid blocking UI
     const searchTimeout = setTimeout(() => {
       const filtered = items.filter((item) =>
         searchFn(item, debouncedSearchTerm.toLowerCase())
@@ -127,8 +115,6 @@ export function useSearch<T>(
 
   return { results, isSearching };
 }
-
-// Form validation hook with debouncing
 export function useValidation<T extends Record<string, any>>(
   values: T,
   validators: { [K in keyof T]?: (value: T[K]) => string | null },

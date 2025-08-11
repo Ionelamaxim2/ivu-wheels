@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-// Using plain img for compatibility with hosting image optimizer
 import FooterSection from "@/components/FooterSection";
 import { cartStore } from "../../../lib/cartStore";
 import ProductStructuredData from "../../../components/ProductStructuredData";
@@ -29,8 +28,6 @@ export default function ProductPage({ params }: ProductPageProps) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [sizeError, setSizeError] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
-  // Mobile detection
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
@@ -142,8 +139,6 @@ export default function ProductPage({ params }: ProductPageProps) {
     const r = parseInt(hex.substr(0, 2), 16);
     const g = parseInt(hex.substr(2, 2), 16);
     const b = parseInt(hex.substr(4, 2), 16);
-
-    // Calculate luminance
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
     return luminance > 0.5;
   };
@@ -610,7 +605,6 @@ export default function ProductPage({ params }: ProductPageProps) {
 
             {/* Navigation Arrows */}
             {isMobile ? (
-              // Mobile: Arrows at bottom, side by side
               <div
                 style={{
                   position: "absolute",
@@ -674,7 +668,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                 </button>
               </div>
             ) : (
-              // Desktop: Original vertical arrows
               <>
                 <button
                   onClick={() =>
@@ -742,17 +735,24 @@ export default function ProductPage({ params }: ProductPageProps) {
 
           {/* Right Side - Product Details */}
           <div style={{ paddingTop: "2rem" }}>
-            <h1
-              style={{
-                fontSize: isMobile ? "2rem" : "3rem",
-                fontWeight: "bold",
-                marginBottom: "0.5rem",
-                color: "black",
-                fontFamily: "Just, Arial, sans-serif",
-              }}
+            <Link
+              href="/"
+              aria-label="Go home"
+              style={{ textDecoration: "none" }}
             >
-              IVU
-            </h1>
+              <h1
+                style={{
+                  fontSize: isMobile ? "2rem" : "3rem",
+                  fontWeight: "bold",
+                  marginBottom: "0.5rem",
+                  color: "black",
+                  fontFamily: "Just, Arial, sans-serif",
+                  cursor: "pointer",
+                }}
+              >
+                IVU
+              </h1>
+            </Link>
 
             <h2
               style={{
@@ -1299,7 +1299,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                               justifyContent: "center",
                               padding: isMobile ? "8px 14px" : "10px 16px",
                               minHeight: isMobile ? "34px" : "36px",
-                              border: "2px solid #000",
+                              border: "1px solid rgba(0,0,0,0.4)",
                               borderRadius: "9999px",
                               color: "#000",
                               fontFamily: "Gruppo, Arial, sans-serif",

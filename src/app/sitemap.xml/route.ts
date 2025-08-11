@@ -14,8 +14,6 @@ export async function GET() {
     "/terms",
     "/coming-soon",
   ];
-
-  // Dynamic product pages
   const productPages = wheels.map((wheel) => `/products/${wheel.id}`);
 
   const allPages = [...staticPages, ...productPages];

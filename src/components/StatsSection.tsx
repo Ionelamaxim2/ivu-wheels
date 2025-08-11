@@ -11,8 +11,6 @@ export default function StatsSection() {
 
   const [animatedNumbers, setAnimatedNumbers] = useState(stats.map(() => 0));
   const [isMobile, setIsMobile] = useState(false);
-
-  // Mobile detection
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();

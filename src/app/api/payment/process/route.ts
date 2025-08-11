@@ -72,8 +72,6 @@ export async function POST(request: NextRequest) {
     initOrdersDb();
 
     const paymentData: PaymentData = await request.json();
-
-    // Validare date
     if (!paymentData.email || !paymentData.address || !paymentData.city) {
       return NextResponse.json(
         { error: "Missing required fields" },

@@ -2,7 +2,6 @@
 
 import { wheels } from "@/data/wheels";
 import Link from "next/link";
-// import Image from "next/image";
 import FooterSection from "@/components/FooterSection";
 import { useState, useEffect } from "react";
 

@@ -34,13 +34,10 @@ export default function ConfirmationPage() {
       const lastOrder = JSON.parse(localStorage.getItem("lastOrder") || "{}");
 
       if (lastOrder.orderNumber) {
-        // Use data from API payment processing
         setOrderNumber(lastOrder.orderNumber);
         setOrderDate(new Date(lastOrder.date).toLocaleDateString());
         setCartItems(lastOrder.items || []);
         setTotal(lastOrder.total || 0);
-
-        // Get contact and shipping info from checkout info
         const info = JSON.parse(localStorage.getItem("checkoutInfo") || "{}");
         setContactEmail(info.email || "");
         const address = `${info.firstName || ""} ${info.lastName || ""}, ${

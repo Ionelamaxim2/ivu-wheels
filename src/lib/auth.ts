@@ -1,4 +1,3 @@
-// Minimal client-side auth + orders utilities (localStorage based)
 export type User = {
   email: string;
   firstName?: string;

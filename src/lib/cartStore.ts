@@ -1,4 +1,3 @@
-// Simple cart store for testing
 let cartItems: any[] = [];
 
 export const cartStore = {

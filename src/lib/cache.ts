@@ -11,9 +11,7 @@ class Cache {
   private maxSize: number = 100;
 
   set<T>(key: string, data: T, ttl: number = 5 * 60 * 1000): void {
-    // TTL default: 5 minutes
     if (this.cache.size >= this.maxSize) {
-      // Remove oldest entry
       const firstKey = this.cache.keys().next().value;
       if (firstKey) {
         this.cache.delete(firstKey);
@@ -33,8 +31,6 @@ class Cache {
     if (!item) {
       return null;
     }
-
-    // Check if expired
     if (Date.now() - item.timestamp > item.ttl) {
       this.cache.delete(key);
       return null;
@@ -49,8 +45,6 @@ class Cache {
     if (!item) {
       return false;
     }
-
-    // Check if expired
     if (Date.now() - item.timestamp > item.ttl) {
       this.cache.delete(key);
       return false;
@@ -70,8 +64,6 @@ class Cache {
   size(): number {
     return this.cache.size;
   }
-
-  // Clean expired entries
   cleanup(): void {
     const now = Date.now();
     const entries = Array.from(this.cache.entries());
@@ -82,18 +74,12 @@ class Cache {
     }
   }
 }
-
-// Global cache instance
 export const cache = new Cache();
-
-// Auto cleanup every 5 minutes
 if (typeof window !== "undefined") {
   setInterval(() => {
     cache.cleanup();
   }, 5 * 60 * 1000);
 }
-
-// Local Storage cache with expiration
 export class LocalStorageCache {
   private prefix: string;
 
@@ -102,7 +88,6 @@ export class LocalStorageCache {
   }
 
   set<T>(key: string, data: T, ttl: number = 24 * 60 * 60 * 1000): void {
-    // TTL default: 24 hours
     if (typeof window === "undefined") return;
 
     try {
@@ -125,8 +110,6 @@ export class LocalStorageCache {
       if (!itemStr) return null;
 
       const item = JSON.parse(itemStr);
-
-      // Check if expired
       if (Date.now() - item.timestamp > item.ttl) {
         localStorage.removeItem(this.prefix + key);
         return null;
@@ -159,18 +142,13 @@ export class LocalStorageCache {
     });
   }
 }
-
-// Export instances
 export const localCache = new LocalStorageCache();
-
-// Image cache for optimized loading
 export class ImageCache {
   private cache: Map<string, HTMLImageElement> = new Map();
   private maxSize: number = 50;
 
   preload(src: string): Promise<HTMLImageElement> {
     return new Promise((resolve, reject) => {
-      // Check if already cached
       const cached = this.cache.get(src);
       if (cached) {
         resolve(cached);
@@ -179,7 +157,6 @@ export class ImageCache {
 
       const img = new Image();
       img.onload = () => {
-        // Add to cache
         if (this.cache.size >= this.maxSize) {
           const firstKey = this.cache.keys().next().value;
           if (firstKey) {
@@ -213,22 +190,16 @@ export class ImageCache {
 }
 
 export const imageCache = new ImageCache();
-
-// API response cache
 export async function cachedFetch<T>(
   url: string,
   options?: RequestInit,
   ttl: number = 5 * 60 * 1000
 ): Promise<T> {
   const cacheKey = `fetch_${url}_${JSON.stringify(options || {})}`;
-
-  // Check cache first
   const cached = cache.get<T>(cacheKey);
   if (cached) {
     return cached;
   }
-
-  // Fetch from API
   try {
     const response = await fetch(url, options);
     if (!response.ok) {
@@ -236,8 +207,6 @@ export async function cachedFetch<T>(
     }
 
     const data = await response.json();
-
-    // Cache the result
     cache.set(cacheKey, data, ttl);
 
     return data;
