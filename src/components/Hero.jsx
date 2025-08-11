@@ -20,32 +20,35 @@ export default function Hero() {
 
   return (
     <section className="hero-section">
-      <video
-        key={isMobile ? "mobile" : "desktop"}
-        className="hero-video-bg"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        poster="/wheelsshop/masinafundal1.webp"
-        style={{
-          filter: "grayscale(0.8) contrast(1.2) brightness(0.9) saturate(0.3)",
-          objectFit: "cover",
-          objectPosition: "center 60%",
-        }}
-        disablePictureInPicture
-      >
-        <source
-          src={
-            isMobile
-              ? "/wheelsshop/HEROVIDEO.mp4"
-              : "/wheelsshop/masinafundalpc.mp4"
-          }
-          type="video/mp4"
+      {isMobile ? (
+        <img
+          src="/wheelsshop/masinafundal1.webp"
+          alt="IVU Wheels hero"
+          className="hero-video-bg"
+          style={{ objectFit: "cover", objectPosition: "center 60%" }}
+          loading="eager"
+          decoding="async"
         />
-        Your browser does not support the video tag.
-      </video>
+      ) : (
+        <video
+          key={isMobile ? "mobile" : "desktop"}
+          className="hero-video-bg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/wheelsshop/masinafundal1.webp"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center 60%",
+          }}
+          disablePictureInPicture
+        >
+          <source src={"/wheelsshop/masinafundalpc.mp4"} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       <img
         src="/wheelsshop/Icon.svg"
@@ -63,12 +66,9 @@ export default function Hero() {
           className="hero-buttons-glass-center"
           style={{ justifyContent: "center" }}
         >
-          <button
-            className="hero-btn-liquid-glass"
-            onClick={() => (window.location.href = "/products")}
-          >
+          <a className="hero-btn-liquid-glass" href="/products">
             View collection
-          </button>
+          </a>
         </div>
       </div>
     </section>
