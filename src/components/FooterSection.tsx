@@ -209,24 +209,28 @@ export default function FooterSection() {
             >
               <a
                 href="/coming-soon"
+                aria-label="Follow us on Facebook"
                 style={{ color: "#ccc", textDecoration: "none" }}
               >
                 Facebook
               </a>
               <a
                 href="/coming-soon"
+                aria-label="Follow us on Twitter"
                 style={{ color: "#ccc", textDecoration: "none" }}
               >
                 Twitter
               </a>
               <a
                 href="/coming-soon"
+                aria-label="Connect on LinkedIn"
                 style={{ color: "#ccc", textDecoration: "none" }}
               >
                 LinkedIn
               </a>
               <a
                 href="/coming-soon"
+                aria-label="Follow us on Instagram"
                 style={{ color: "#ccc", textDecoration: "none" }}
               >
                 Instagram
