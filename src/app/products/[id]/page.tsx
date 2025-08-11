@@ -1011,19 +1011,19 @@ export default function ProductPage({ params }: ProductPageProps) {
                     style={{
                       background: wheel.buttonColor,
                       backgroundImage:
-                        "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08))",
+                        "linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.1))",
                       color: isLightColor(wheel.buttonColor)
                         ? "black"
                         : "white",
-                      border: `2px solid ${
+                      border: `3px solid ${
                         isLightColor(wheel.buttonColor)
-                          ? "rgba(0,0,0,0.25)"
-                          : "rgba(255,255,255,0.6)"
+                          ? "rgba(0,0,0,0.35)"
+                          : "rgba(255,255,255,0.75)"
                       }`,
                       borderRadius: "50px",
-                      padding: "1.6rem 3rem",
-                      fontSize: "1.15rem",
-                      fontWeight: "800",
+                      padding: "1.7rem 3.2rem",
+                      fontSize: "1.18rem",
+                      fontWeight: "900",
                       cursor:
                         !selectedCar || !selectedSize
                           ? "not-allowed"
@@ -1032,15 +1032,16 @@ export default function ProductPage({ params }: ProductPageProps) {
                       transition: "none",
                       fontFamily: "Gruppo, Arial, sans-serif",
                       textTransform: "uppercase",
-                      letterSpacing: "1px",
+                      letterSpacing: "1.2px",
                       opacity: !selectedCar || !selectedSize ? 0.5 : 1,
                       boxShadow:
-                        "0 20px 32px rgba(0,0,0,0.34), 0 0 0 5px rgba(255,255,255,0.2)",
+                        "0 24px 44px rgba(0,0,0,0.38), 0 0 0 6px rgba(255,255,255,0.22)",
                       textShadow: isLightColor(wheel.buttonColor)
                         ? "none"
-                        : "0 1px 1px rgba(0,0,0,0.35)",
+                        : "0 1px 1px rgba(0,0,0,0.4)",
                       outline: "none",
                       transform: "none",
+                      filter: "saturate(1.05)",
                     }}
                   >
                     ADD TO CART
@@ -1056,19 +1057,19 @@ export default function ProductPage({ params }: ProductPageProps) {
                     style={{
                       background: wheel.buttonColor,
                       backgroundImage:
-                        "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08))",
+                        "linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.1))",
                       color: isLightColor(wheel.buttonColor)
                         ? "black"
                         : "white",
-                      border: `2px solid ${
+                      border: `3px solid ${
                         isLightColor(wheel.buttonColor)
-                          ? "rgba(0,0,0,0.25)"
-                          : "rgba(255,255,255,0.6)"
+                          ? "rgba(0,0,0,0.35)"
+                          : "rgba(255,255,255,0.75)"
                       }`,
                       borderRadius: "50px",
-                      padding: "1.2rem 2.2rem",
-                      fontSize: "1.05rem",
-                      fontWeight: "800",
+                      padding: "1.3rem 2.4rem",
+                      fontSize: "1.08rem",
+                      fontWeight: "900",
                       cursor:
                         !selectedCar || !selectedSize
                           ? "not-allowed"
@@ -1077,15 +1078,16 @@ export default function ProductPage({ params }: ProductPageProps) {
                       transition: "none",
                       fontFamily: "Gruppo, Arial, sans-serif",
                       textTransform: "uppercase",
-                      letterSpacing: "1px",
+                      letterSpacing: "1.2px",
                       opacity: !selectedCar || !selectedSize ? 0.5 : 1,
                       boxShadow:
-                        "0 16px 28px rgba(0,0,0,0.34), 0 0 0 5px rgba(255,255,255,0.2)",
+                        "0 20px 36px rgba(0,0,0,0.34), 0 0 0 6px rgba(255,255,255,0.22)",
                       textShadow: isLightColor(wheel.buttonColor)
                         ? "none"
-                        : "0 1px 1px rgba(0,0,0,0.35)",
+                        : "0 1px 1px rgba(0,0,0,0.4)",
                       outline: "none",
                       transform: "none",
+                      filter: "saturate(1.05)",
                     }}
                   >
                     ADD TO CART
@@ -1184,8 +1186,8 @@ export default function ProductPage({ params }: ProductPageProps) {
                 >
                   <div
                     style={{
-                      height: isMobile ? "260px" : "380px",
-                      width: isMobile ? "200px" : "300px",
+                      height: isMobile ? "240px" : "380px",
+                      width: isMobile ? "180px" : "300px",
                       perspective: "1000px",
                     }}
                   >
@@ -1295,8 +1297,8 @@ export default function ProductPage({ params }: ProductPageProps) {
                               display: "inline-flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              width: isMobile ? "68px" : "72px",
-                              height: isMobile ? "34px" : "36px",
+                              padding: isMobile ? "8px 14px" : "10px 16px",
+                              minHeight: isMobile ? "34px" : "36px",
                               border: "2px solid #000",
                               borderRadius: "9999px",
                               color: "#000",
@@ -1307,7 +1309,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                               lineHeight: 1,
                             }}
                           >
-                            See
+                            See more
                           </span>
                         </div>
                       </div>

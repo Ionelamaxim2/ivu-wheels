@@ -118,7 +118,9 @@
 
 .hero-btn-liquid-glass {
   position: relative;
-  display: inline-block;
+  display: inline-flex; /* center text */
+  align-items: center;
+  justify-content: center;
   padding: 20px 40px;
   border: none;
   border-radius: 18px;
@@ -133,6 +135,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-decoration: none;
+  text-align: center;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1),
