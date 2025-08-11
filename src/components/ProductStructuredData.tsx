@@ -14,11 +14,12 @@ interface ProductStructuredDataProps {
 export default function ProductStructuredData({
   product,
 }: ProductStructuredDataProps) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
   const structuredData = {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: [`http://localhost:3001/wheels2/${product.image}`],
+    image: [`${siteUrl}/wheels2/${product.image}`],
     description:
       product.description ||
       `Premium ${product.category} wheel from IVU Wheels collection. High-quality custom rim designed for performance and style.`,
@@ -31,12 +32,12 @@ export default function ProductStructuredData({
     category: product.category,
     offers: {
       "@type": "Offer",
-      url: `http://localhost:3001/products/${product.id}`,
-      priceCurrency: "USD",
+      url: `${siteUrl}/products/${product.id}`,
+      priceCurrency: "EUR",
       price: product.price,
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
         .toISOString()
-        .split("T")[0], // 1 year from now
+        .split("T")[0],
       itemCondition: "https://schema.org/NewCondition",
       availability: "https://schema.org/InStock",
       seller: {
@@ -48,7 +49,7 @@ export default function ProductStructuredData({
         shippingRate: {
           "@type": "MonetaryAmount",
           value: "0",
-          currency: "USD",
+          currency: "EUR",
         },
         deliveryTime: {
           "@type": "ShippingDeliveryTime",
@@ -90,7 +91,7 @@ export default function ProductStructuredData({
           "Amazing quality wheels, perfect fit and excellent customer service!",
       },
     ],
-  };
+  } as const;
 
   return (
     <script

@@ -127,7 +127,11 @@ export default function ProductsPage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <a href="/cart" style={{ color: "white", textDecoration: "none" }}>
+          <a
+            href="/cart"
+            aria-label="Open cart"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <span style={{ position: "relative", display: "inline-block" }}>
               <svg
                 viewBox="0 0 24 24"
@@ -383,7 +387,7 @@ export default function ProductsPage() {
             marginBottom: "3rem",
           }}
         >
-          {filteredWheels.map((wheel) => (
+          {filteredWheels.map((wheel, index) => (
             <Link
               key={wheel.id}
               href={`/products/${wheel.id}`}
@@ -399,12 +403,16 @@ export default function ProductsPage() {
                 display: "block",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(-5px)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "rgba(255, 255, 255, 0.12)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(0)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "rgba(255, 255, 255, 0.08)";
               }}
             >
               <div
@@ -419,6 +427,11 @@ export default function ProductsPage() {
                 <img
                   src={`/wheels2/${getFirstImage(wheel.images)}`}
                   alt={wheel.name}
+                  width={400}
+                  height={400}
+                  fetchPriority={index === 0 ? "high" : undefined}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
                   style={{
                     width: "100%",
                     height: "100%",

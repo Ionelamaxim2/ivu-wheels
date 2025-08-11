@@ -1,7 +1,7 @@
 import { wheels } from "../../data/wheels";
 
 export async function GET() {
-  const baseUrl = "http://localhost:3001";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
 
   const staticPages = [
     "",

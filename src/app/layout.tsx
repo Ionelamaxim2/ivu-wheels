@@ -5,6 +5,9 @@ import ClientLayout from "../components/ClientLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Site URL for SEO (falls back to localhost in dev)
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
+
 export const metadata: Metadata = {
   title: {
     default: "IVU Wheels - Premium Custom Rims & Wheels",
@@ -29,14 +32,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("http://localhost:3001"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "http://localhost:3001",
+    url: siteUrl,
     title: "IVU Wheels - Premium Custom Rims & Wheels",
     description:
       "Discover premium custom rims and wheels that define your drive. Shop Performance, Modular, and Flow collections with free shipping.",
@@ -100,18 +103,7 @@ export default function RootLayout({
           crossOrigin=""
         />
 
-        <link
-          rel="preload"
-          href="/wheelsshop/masinafundal1.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/wheelsshop/masinafundal2.webp"
-          as="image"
-          type="image/webp"
-        />
+        {/* Keep only critical brand asset preload */}
         <link
           rel="preload"
           href="/wheelsshop/Icon.svg"
@@ -119,25 +111,7 @@ export default function RootLayout({
           type="image/svg+xml"
         />
 
-        <link
-          rel="preload"
-          href="/wheels2/satinblack.performance1.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/wheels2/blue.modular1.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/wheels2/bloodred.flow1.webp"
-          as="image"
-          type="image/webp"
-        />
-
+        {/* Preload only video metadata via browser fetch; we avoid preloading heavy gallery images here */}
         <link
           rel="preload"
           href="/wheelsshop/HEROVIDEO.mp4"

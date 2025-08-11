@@ -1,9 +1,10 @@
 {
   "/page": "app/page.js",
-  "/cart/page": "app/cart/page.js",
   "/login/page": "app/login/page.js",
-  "/products/page": "app/products/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/icon/[[...__metadata_id__]]/route": "app/icon/[[...__metadata_id__]]/route.js",
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
-  "/icon/[[...__metadata_id__]]/route": "app/icon/[[...__metadata_id__]]/route.js"
+  "/cart/page": "app/cart/page.js",
+  "/products/page": "app/products/page.js",
+  "/products/[id]/page": "app/products/[id]/page.js"
 }

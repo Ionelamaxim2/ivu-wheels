@@ -177,7 +177,11 @@ export default function PaymentPage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <Link href="/cart" style={{ color: "white", textDecoration: "none" }}>
+          <Link
+            href="/cart"
+            aria-label="Open cart"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <span style={{ position: "relative", display: "inline-block" }}>
               <svg
                 viewBox="0 0 24 24"

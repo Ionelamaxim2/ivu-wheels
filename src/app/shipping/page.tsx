@@ -134,13 +134,17 @@ export default function ShippingPage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <Link href="/cart" style={{ color: "white", textDecoration: "none" }}>
+          <Link
+            href="/cart"
+            aria-label="Open cart"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <span style={{ position: "relative", display: "inline-block" }}>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ width: "34px", height: "34px" }}
+                style={{ width: "28px", height: "28px" }}
               >
                 <path
                   d="M6 6h15l-1.5 9h-12z"

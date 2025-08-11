@@ -29,12 +29,12 @@ export default function Hero() {
         playsInline
         preload="metadata"
         poster="/wheelsshop/masinafundal1.webp"
-        loading="eager"
         style={{
           filter: "grayscale(0.8) contrast(1.2) brightness(0.9) saturate(0.3)",
           objectFit: "cover",
           objectPosition: "center 60%",
         }}
+        disablePictureInPicture
       >
         <source
           src={
@@ -52,6 +52,7 @@ export default function Hero() {
         alt="logo"
         className="hero-logo-corner"
         loading="eager"
+        decoding="async"
       />
 
       <div className="hero-center-content">

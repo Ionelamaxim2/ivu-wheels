@@ -1,9 +1,10 @@
 export async function GET() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
   const robotsTxt = `User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: http://localhost:3001/sitemap.xml
+Sitemap: ${siteUrl}/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

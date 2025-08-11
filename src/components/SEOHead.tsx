@@ -23,7 +23,9 @@ export default function SEOHead({
   url = "",
   type = "website",
 }: SEOHeadProps) {
-  const fullUrl = `http://localhost:3001${url}`;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
+  const fullUrl = `${siteUrl}${url}`;
+  const logoUrl = `${siteUrl}/wheelsshop/Icon.svg`;
 
   return (
     <Head>
@@ -61,17 +63,18 @@ export default function SEOHead({
             name: "IVU Wheels",
             description: description,
             url: fullUrl,
-            logo: "http://localhost:3001/wheelsshop/Icon.svg",
+            logo: logoUrl,
             image: image,
             address: {
               "@type": "PostalAddress",
-              addressCountry: "US",
+              addressCountry: "RO",
+              addressLocality: "Bucharest",
             },
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "customer service",
             },
-            sameAs: ["http://localhost:3001/coming-soon"],
+            sameAs: [`${siteUrl}/coming-soon`],
           }),
         }}
       />

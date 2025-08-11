@@ -13,6 +13,7 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items, currentPage }: BreadcrumbsProps) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -21,13 +22,13 @@ export default function Breadcrumbs({ items, currentPage }: BreadcrumbsProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "http://localhost:3001",
+        item: siteUrl,
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
         position: index + 2,
         name: item.name,
-        item: `http://localhost:3001${item.href}`,
+        item: `${siteUrl}${item.href}`,
       })),
       {
         "@type": "ListItem",
@@ -35,7 +36,7 @@ export default function Breadcrumbs({ items, currentPage }: BreadcrumbsProps) {
         name: currentPage,
       },
     ],
-  };
+  } as const;
 
   return (
     <>

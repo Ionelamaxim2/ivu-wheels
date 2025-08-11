@@ -231,7 +231,11 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <Link href="/cart" style={{ color: "white", textDecoration: "none" }}>
+          <Link
+            href="/cart"
+            aria-label="Open cart"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <span style={{ position: "relative", display: "inline-block" }}>
               <svg
                 viewBox="0 0 24 24"
@@ -424,7 +428,7 @@ export default function ProductPage({ params }: ProductPageProps) {
           }}
         >
           <button
-            onClick={() => (window.location.href = "/")}
+            onClick={() => (window.location.href = "/products")}
             style={{
               display: "flex",
               height: isMobile ? "3em" : "3em",
@@ -921,27 +925,77 @@ export default function ProductPage({ params }: ProductPageProps) {
                 >
                   Quantity
                 </label>
-                <input
-                  type="number"
-                  value={quantity}
-                  onChange={(e) =>
-                    setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                  }
+                <div
                   style={{
-                    background: "white",
-                    border: "1px solid black",
-                    borderRadius: "25px",
-                    padding: "0.8rem 1.2rem",
-                    fontSize: "0.9rem",
-                    width: "100px",
-                    textAlign: "center",
-                    fontFamily: "Arial, sans-serif",
-                    fontWeight: "600",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
                   }}
-                  min="1"
-                />
+                >
+                  <button
+                    type="button"
+                    aria-label="Decrease quantity"
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    style={{
+                      background: "transparent",
+                      border: "1px solid black",
+                      borderRadius: "50%",
+                      width: "36px",
+                      height: "36px",
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      color: "black",
+                    }}
+                  >
+                    −
+                  </button>
+                  <input
+                    type="number"
+                    value={quantity}
+                    onChange={(e) => {
+                      const n = e.currentTarget.valueAsNumber;
+                      if (Number.isNaN(n)) return;
+                      const clamped = Math.max(1, Math.min(20, Math.floor(n)));
+                      setQuantity(clamped);
+                    }}
+                    style={{
+                      background: "white",
+                      border: "1px solid black",
+                      borderRadius: "25px",
+                      padding: "0.8rem 1.2rem",
+                      fontSize: "0.9rem",
+                      width: "100px",
+                      textAlign: "center",
+                      fontFamily: "Arial, sans-serif",
+                      fontWeight: 600,
+                      letterSpacing: "0.5px",
+                    }}
+                    min={1}
+                    max={20}
+                    step={1}
+                    inputMode="numeric"
+                    aria-label="Quantity"
+                  />
+                  <button
+                    type="button"
+                    aria-label="Increase quantity"
+                    onClick={() => setQuantity(Math.min(20, quantity + 1))}
+                    style={{
+                      background: "transparent",
+                      border: "1px solid black",
+                      borderRadius: "50%",
+                      width: "36px",
+                      height: "36px",
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      color: "black",
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
 
                 {/* Add to Cart Button - Same row on desktop, separate on mobile */}
                 {!isMobile && (
@@ -949,30 +1003,48 @@ export default function ProductPage({ params }: ProductPageProps) {
                     onClick={handleAddToCart}
                     style={{
                       background: wheel.buttonColor,
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08))",
                       color: isLightColor(wheel.buttonColor)
                         ? "black"
                         : "white",
-                      border: "none",
+                      border: `2px solid ${
+                        isLightColor(wheel.buttonColor)
+                          ? "rgba(0,0,0,0.25)"
+                          : "rgba(255,255,255,0.6)"
+                      }`,
                       borderRadius: "50px",
-                      padding: "1.5rem 2.5rem",
-                      fontSize: "1.1rem",
+                      padding: "1.6rem 3rem",
+                      fontSize: "1.15rem",
                       fontWeight: "800",
                       cursor:
                         !selectedCar || !selectedSize
                           ? "not-allowed"
                           : "pointer",
                       flex: "1",
-                      transition: "all 0.3s ease",
+                      transition: "all 0.25s ease",
                       fontFamily: "Gruppo, Arial, sans-serif",
                       textTransform: "uppercase",
-                      letterSpacing: "0.5px",
+                      letterSpacing: "1px",
                       opacity: !selectedCar || !selectedSize ? 0.5 : 1,
+                      boxShadow:
+                        "0 12px 24px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)",
+                      textShadow: isLightColor(wheel.buttonColor)
+                        ? "none"
+                        : "0 1px 1px rgba(0,0,0,0.35)",
+                      outline: "none",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.opacity = "0.8";
+                      e.currentTarget.style.opacity = "0.9";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 16px 28px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.18)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.opacity = "1";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 12px 24px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)";
                     }}
                   >
                     ADD TO CART
@@ -987,30 +1059,48 @@ export default function ProductPage({ params }: ProductPageProps) {
                     onClick={handleAddToCart}
                     style={{
                       background: wheel.buttonColor,
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08))",
                       color: isLightColor(wheel.buttonColor)
                         ? "black"
                         : "white",
-                      border: "none",
+                      border: `2px solid ${
+                        isLightColor(wheel.buttonColor)
+                          ? "rgba(0,0,0,0.25)"
+                          : "rgba(255,255,255,0.6)"
+                      }`,
                       borderRadius: "50px",
-                      padding: "1rem 2rem",
-                      fontSize: "1rem",
+                      padding: "1.2rem 2.2rem",
+                      fontSize: "1.05rem",
                       fontWeight: "800",
                       cursor:
                         !selectedCar || !selectedSize
                           ? "not-allowed"
                           : "pointer",
                       width: "100%",
-                      transition: "all 0.3s ease",
+                      transition: "all 0.25s ease",
                       fontFamily: "Gruppo, Arial, sans-serif",
                       textTransform: "uppercase",
-                      letterSpacing: "0.5px",
+                      letterSpacing: "1px",
                       opacity: !selectedCar || !selectedSize ? 0.5 : 1,
+                      boxShadow:
+                        "0 10px 22px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)",
+                      textShadow: isLightColor(wheel.buttonColor)
+                        ? "none"
+                        : "0 1px 1px rgba(0,0,0,0.35)",
+                      outline: "none",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.opacity = "0.8";
+                      e.currentTarget.style.opacity = "0.9";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 14px 26px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.18)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.opacity = "1";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 10px 22px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)";
                     }}
                   >
                     ADD TO CART

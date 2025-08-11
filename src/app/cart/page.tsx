@@ -24,7 +24,6 @@ export default function CartPage() {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Form state & validation
   const [formData, setFormData] = useState({
     email: "",
     country: "",
@@ -121,7 +120,6 @@ export default function CartPage() {
     }
   };
 
-  // Setup responsive breakpoint
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 900);
     onResize();
@@ -129,7 +127,6 @@ export default function CartPage() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Prefill checkout info on mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem("checkoutInfo");
@@ -140,7 +137,6 @@ export default function CartPage() {
     } catch {}
   }, []);
 
-  // Auth state
   useEffect(() => {
     const check = () => {
       try {
@@ -161,14 +157,12 @@ export default function CartPage() {
     };
   }, []);
 
-  // Load cart items from multiple sources
   useEffect(() => {
     const loadCart = () => {
       try {
         console.log("=== CART PAGE DEBUG ===");
         console.log("Cart page loading...");
 
-        // First try cart store
         const storeItems = cartStore.getItems();
         console.log("Cart store items:", storeItems);
 
@@ -179,7 +173,6 @@ export default function CartPage() {
           return;
         }
 
-        // Then try localStorage
         if (typeof window !== "undefined") {
           const key = (function () {
             try {
@@ -224,7 +217,6 @@ export default function CartPage() {
       }
     };
 
-    // Load cart immediately
     loadCart();
 
     // Add global functions for testing
@@ -269,9 +261,8 @@ export default function CartPage() {
       delete (window as any).clearCart;
       delete (window as any).addTestItem;
     };
-  }, []); // Removed cartItems dependency to fix the warning
+  }, []);
 
-  // Save cart items to localStorage whenever cart changes (but only after initial load)
   useEffect(() => {
     if (!isLoaded) return;
     try {
@@ -304,7 +295,7 @@ export default function CartPage() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const shipping = 0; // Will be calculated at next step
+  const shipping = 0;
   const total = subtotal + shipping;
 
   const handleRemove = (id: number) => {
@@ -314,7 +305,6 @@ export default function CartPage() {
     } catch {}
   };
 
-  // Quick links for express checkout
   const openExpress = (method: string) => {
     const urls: Record<string, string> = {
       "Shop Pay": "https://shop.app/pay",
