@@ -2,6 +2,7 @@
 
 import { wheels } from "@/data/wheels";
 import Link from "next/link";
+import Image from "next/image";
 import FooterSection from "@/components/FooterSection";
 import { useState, useEffect } from "react";
 
@@ -83,42 +84,44 @@ export default function ProductsPage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <div
-            onClick={() => (window.location.href = "/")}
-            style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              backgroundColor: "white",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-              border: "2px solid white",
-              boxShadow: "0 0 10px rgba(255, 255, 255, 0.3)",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLDivElement).style.transform =
-                "scale(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
-            }}
-          >
-            <span
+          <Link href="/" style={{ textDecoration: "none" }}>
+            <div
               style={{
-                color: "black",
-                fontWeight: "bold",
-                fontSize: "1rem",
-                fontFamily: "Arial, sans-serif",
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                backgroundColor: "white",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+                border: "2px solid white",
+                boxShadow: "0 0 10px rgba(255, 255, 255, 0.3)",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform =
+                  "scale(1.1)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform =
+                  "scale(1)";
               }}
             >
-              IVU
-            </span>
-          </div>
+              <span
+                style={{
+                  color: "black",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  fontFamily: "Arial, sans-serif",
+                  cursor: "pointer",
+                }}
+              >
+                IVU
+              </span>
+            </div>
+          </Link>
           <span
             style={{ color: "white", fontSize: "0.95rem", letterSpacing: 1 }}
           >
@@ -127,7 +130,7 @@ export default function ProductsPage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <a
+          <Link
             href="/cart"
             aria-label="Open cart"
             style={{ color: "white", textDecoration: "none" }}
@@ -178,9 +181,9 @@ export default function ProductsPage() {
                 }}
               ></span>
             </span>
-          </a>
+          </Link>
           {isLoggedIn ? (
-            <a
+            <Link
               id="nav-auth"
               href="/user"
               style={{
@@ -208,9 +211,9 @@ export default function ProductsPage() {
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
-            </a>
+            </Link>
           ) : (
-            <a
+            <Link
               id="nav-auth"
               href="/login"
               style={{
@@ -226,7 +229,7 @@ export default function ProductsPage() {
               }}
             >
               LOG IN
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -424,14 +427,14 @@ export default function ProductsPage() {
                   background: "#f5f5f5",
                 }}
               >
-                <img
+                <Image
                   src={`/wheels2/${getFirstImage(wheel.images)}`}
                   alt={wheel.name}
                   width={400}
                   height={400}
-                  fetchPriority={index === 0 ? "high" : undefined}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
+                  priority={index === 0}
+                  loading={index === 0 ? undefined : "lazy"}
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -491,7 +494,8 @@ export default function ProductsPage() {
               }
             }catch(e){}
           }
-          update();
+          var schedule = window.requestIdleCallback ? requestIdleCallback : function(cb){ setTimeout(cb, 0); };
+          schedule(update);
           window.addEventListener('cart-updated', update);
           window.addEventListener('auth-updated', update);
           window.addEventListener('storage', function(ev){ if(ev.key==='user') update(); });
