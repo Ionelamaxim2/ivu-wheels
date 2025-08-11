@@ -1029,29 +1029,18 @@ export default function ProductPage({ params }: ProductPageProps) {
                           ? "not-allowed"
                           : "pointer",
                       flex: "1",
-                      transition: "all 0.25s ease",
+                      transition: "none",
                       fontFamily: "Gruppo, Arial, sans-serif",
                       textTransform: "uppercase",
                       letterSpacing: "1px",
                       opacity: !selectedCar || !selectedSize ? 0.5 : 1,
                       boxShadow:
-                        "0 12px 24px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)",
+                        "0 20px 32px rgba(0,0,0,0.34), 0 0 0 5px rgba(255,255,255,0.2)",
                       textShadow: isLightColor(wheel.buttonColor)
                         ? "none"
                         : "0 1px 1px rgba(0,0,0,0.35)",
                       outline: "none",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.opacity = "0.9";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow =
-                        "0 16px 28px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.18)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.opacity = "1";
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow =
-                        "0 12px 24px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)";
+                      transform: "none",
                     }}
                   >
                     ADD TO CART
@@ -1085,29 +1074,18 @@ export default function ProductPage({ params }: ProductPageProps) {
                           ? "not-allowed"
                           : "pointer",
                       width: "100%",
-                      transition: "all 0.25s ease",
+                      transition: "none",
                       fontFamily: "Gruppo, Arial, sans-serif",
                       textTransform: "uppercase",
                       letterSpacing: "1px",
                       opacity: !selectedCar || !selectedSize ? 0.5 : 1,
                       boxShadow:
-                        "0 10px 22px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)",
+                        "0 16px 28px rgba(0,0,0,0.34), 0 0 0 5px rgba(255,255,255,0.2)",
                       textShadow: isLightColor(wheel.buttonColor)
                         ? "none"
                         : "0 1px 1px rgba(0,0,0,0.35)",
                       outline: "none",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.opacity = "0.9";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow =
-                        "0 14px 26px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.18)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.opacity = "1";
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow =
-                        "0 10px 22px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.15)";
+                      transform: "none",
                     }}
                   >
                     ADD TO CART
@@ -1206,8 +1184,8 @@ export default function ProductPage({ params }: ProductPageProps) {
                 >
                   <div
                     style={{
-                      height: isMobile ? "200px" : "350px",
-                      width: isMobile ? "150px" : "290px",
+                      height: isMobile ? "260px" : "380px",
+                      width: isMobile ? "200px" : "300px",
                       perspective: "1000px",
                     }}
                   >
@@ -1215,9 +1193,11 @@ export default function ProductPage({ params }: ProductPageProps) {
                       style={{
                         position: "relative",
                         height: "100%",
-                        borderRadius: "30px",
-                        background: wheel.cardBg,
-                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                        borderRadius: isMobile ? "22px" : "26px",
+                        background: isMobile ? "#e6e6e6" : "#ececec",
+                        boxShadow: isMobile
+                          ? "0 8px 22px rgba(0,0,0,0.25)"
+                          : "0 18px 36px rgba(0, 0, 0, 0.22)",
                         transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                         transformStyle: "preserve-3d",
                         transform: "none",
@@ -1227,11 +1207,10 @@ export default function ProductPage({ params }: ProductPageProps) {
                         style={{
                           position: "absolute",
                           inset: "8px",
-                          borderRadius: "25px",
+                          borderRadius: isMobile ? "18px" : "20px",
                           borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
                           borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
-                          background:
-                            "linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1))",
+                          background: "rgba(255,255,255,0.2)",
                           backdropFilter: "blur(4px)",
                           WebkitBackdropFilter: "blur(4px)",
                           transformStyle: "preserve-3d",
@@ -1244,7 +1223,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                           top: "8px",
                           left: "8px",
                           right: "8px",
-                          bottom: isMobile ? "50px" : "80px",
+                          bottom: isMobile ? "84px" : "96px",
                           transform: "translate3d(0,0,26px)",
                         }}
                       >
@@ -1254,9 +1233,8 @@ export default function ProductPage({ params }: ProductPageProps) {
                             height: "100%",
                             width: "100%",
                             overflow: "hidden",
-                            borderRadius: "20px",
-                            background:
-                              "linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))",
+                            borderRadius: isMobile ? "14px" : "16px",
+                            background: "rgba(255,255,255,0.35)",
                           }}
                         >
                           <img
@@ -1268,7 +1246,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                               width: "100%",
                               height: "100%",
                               objectFit: "contain",
-                              padding: "10px",
+                              padding: isMobile ? "10px" : "12px",
                             }}
                           />
                           <div
@@ -1281,7 +1259,58 @@ export default function ProductPage({ params }: ProductPageProps) {
                           />
                         </div>
                       </div>
-                      {/* Price and CTA remain unchanged */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          bottom: isMobile ? "18px" : "26px",
+                          left: "0",
+                          right: "0",
+                          transform: "translate3d(0,0,26px)",
+                          textAlign: "center",
+                          padding: isMobile ? "0 10px" : "0 14px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            gap: isMobile ? "8px" : "10px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              display: "block",
+                              fontSize: isMobile ? "20px" : "26px",
+                              fontWeight: "bold",
+                              color: "#000",
+                              fontFamily: "Gruppo, Arial, sans-serif",
+                              textShadow: "0 2px 6px rgba(0,0,0,0.12)",
+                            }}
+                          >
+                            €{similarWheel.price}
+                          </span>
+                          <span
+                            style={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              width: isMobile ? "68px" : "72px",
+                              height: isMobile ? "34px" : "36px",
+                              border: "2px solid #000",
+                              borderRadius: "9999px",
+                              color: "#000",
+                              fontFamily: "Gruppo, Arial, sans-serif",
+                              fontSize: isMobile ? "12px" : "13px",
+                              letterSpacing: "0.5px",
+                              background: "transparent",
+                              lineHeight: 1,
+                            }}
+                          >
+                            See
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </Link>

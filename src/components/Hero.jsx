@@ -8,20 +8,26 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+    const detectMobile = () => {
+      try {
+        const mq = window.matchMedia("(max-width: 820px)").matches;
+        const ua = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        setIsMobile(mq || ua);
+      } catch {
+        setIsMobile(window.innerWidth <= 820);
+      }
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
+    detectMobile();
+    window.addEventListener("resize", detectMobile);
+    return () => window.removeEventListener("resize", detectMobile);
   }, []);
 
   return (
     <section className="hero-section">
       {isMobile ? (
         <video
+          key="mobile"
           className="hero-video-bg"
           autoPlay
           loop
@@ -29,7 +35,11 @@ export default function Hero() {
           playsInline
           preload="metadata"
           poster="/wheelsshop/masinafundal1.webp"
-          style={{ objectFit: "cover", objectPosition: "center 60%" }}
+          style={{
+            objectFit: "cover",
+            objectPosition: "center 60%",
+            filter: "grayscale(1) contrast(1.1) brightness(0.9)",
+          }}
           disablePictureInPicture
         >
           <source src="/wheelsshop/HEROVIDEO.mp4" type="video/mp4" />
@@ -37,6 +47,7 @@ export default function Hero() {
         </video>
       ) : (
         <video
+          key="desktop"
           className="hero-video-bg"
           autoPlay
           loop
@@ -66,7 +77,10 @@ export default function Hero() {
       />
 
       <div className="hero-center-content">
-        <h1 className="hero-title-blur-centered">
+        <h1
+          className="hero-title-blur-centered"
+          style={{ fontFamily: "Gruppo, Arial, sans-serif" }}
+        >
           RIMS THAT DEFINE YOUR DRIVE
         </h1>
         <div
