@@ -51,7 +51,7 @@ export default function FooterSection() {
           position: "relative",
         }}
       >
-        {/* Scroll to top button - positioned at top right on mobile only */}
+        {/* BOTON SCROLL TO TOP - POZITIONAT IN PARTEA DREAPTA PE TELEFON */}
         {isMobile && (
           <button
             onClick={scrollToTop}

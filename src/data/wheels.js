@@ -9,8 +9,8 @@ export const wheels = [
       "deepconcavegri2.performance.webp",
       "deepconavegri3.webp",
     ],
-    buttonColor: "#888888", // gri
-    cardBg: "#dddddd", // gri pt similar cards
+    buttonColor: "#888888",
+    cardBg: "#dddddd",
     category: "Performance",
     size: ["22", "21", "19"],
     compatibleCars: ["Mercedes", "Audi", "Seat", "VW"],
@@ -32,8 +32,8 @@ export const wheels = [
       "satinblack.performance2.webp",
       "satinblack.performance3.webp",
     ],
-    buttonColor: "#444444", // gri închis
-    cardBg: "#bbbbbb", // gri închis pt similar cards
+    buttonColor: "#444444",
+    cardBg: "#bbbbbb",
     category: "Performance",
     size: ["22", "21", "19"],
     compatibleCars: ["BMW", "Mercedes"],
@@ -55,8 +55,8 @@ export const wheels = [
       "satinblackcustom.performance2.webp",
       "satinblackcustom.performance3.webp",
     ],
-    buttonColor: "#5c5b57", // gri șobolan
-    cardBg: "#b6b5ad", // gri șobolan pt similar cards
+    buttonColor: "#5c5b57",
+    cardBg: "#b6b5ad",
     category: "Performance",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -78,8 +78,8 @@ export const wheels = [
       "sparklingsilver.performance2.webp",
       "sparklingsilver.performance3.webp",
     ],
-    buttonColor: "#c0c0c0", // silver
-    cardBg: "#f4f4f4", // silver (light)
+    buttonColor: "#c0c0c0",
+    cardBg: "#f4f4f4",
     category: "Performance",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -101,8 +101,8 @@ export const wheels = [
       "bloodred.flow2.webp",
       "bloodred.flow3.webp",
     ],
-    buttonColor: "#b80000", // red
-    cardBg: "#ffe5e5", // red accent pt similar
+    buttonColor: "#b80000",
+    cardBg: "#ffe5e5",
     category: "Flow",
     size: ["22", "21", "19"],
     compatibleCars: ["BMW", "Mercedes"],
@@ -121,8 +121,8 @@ export const wheels = [
     price: 1375,
     currency: "euro",
     images: ["blue.modular1.webp", "blue.modular2.webp", "blue.modular3.webp"],
-    buttonColor: "#82cffa", // baby blue
-    cardBg: "#e4f6fb", // baby blue accent
+    buttonColor: "#82cffa",
+    cardBg: "#e4f6fb",
     category: "Modular",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -145,8 +145,8 @@ export const wheels = [
       "cafeamericano.flow2.webp",
       "cafeamericano.flow3.webp",
     ],
-    buttonColor: "#bfa14d", // gold
-    cardBg: "#fff8e1", // gold accent
+    buttonColor: "#bfa14d",
+    cardBg: "#fff8e1",
     category: "Flow",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -168,8 +168,8 @@ export const wheels = [
       "candyred.flow2.webp",
       "candyred.flow3.webp",
     ],
-    buttonColor: "#ffb3b3", // red pale
-    cardBg: "#fff2f2", // red pale
+    buttonColor: "#ffb3b3",
+    cardBg: "#fff2f2",
     category: "Flow",
     size: ["22", "21", "19"],
     compatibleCars: ["BMW", "Mercedes"],
@@ -191,8 +191,8 @@ export const wheels = [
       "champagne.flow2.webp",
       "champagne.flow3.webp",
     ],
-    buttonColor: "#e9cf89", // champagne
-    cardBg: "#f5e9d6", // champagne accent
+    buttonColor: "#e9cf89",
+    cardBg: "#f5e9d6",
     category: "Flow",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -215,8 +215,8 @@ export const wheels = [
       "green.modular2.webp",
       "green.modular3.webp",
     ],
-    buttonColor: "#bdd5ba", // pale green
-    cardBg: "#e6f2e4", // pale green accent
+    buttonColor: "#bdd5ba",
+    cardBg: "#e6f2e4",
     category: "Modular",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -234,8 +234,8 @@ export const wheels = [
     price: 1375,
     currency: "euro",
     images: ["pink.modular1.webp", "pink.modular2.webp", "pink.modular3.webp"],
-    buttonColor: "#ffd5df", // pale pink
-    cardBg: "#fff4f7", // pale pink accent
+    buttonColor: "#ffd5df",
+    cardBg: "#fff4f7",
     category: "Modular",
     size: ["22", "21", "19"],
     compatibleCars: ["BMW", "Mercedes"],
@@ -257,8 +257,8 @@ export const wheels = [
       "purple.modular2.webp",
       "purple.modular3.webp",
     ],
-    buttonColor: "#beacf4", // pale purple
-    cardBg: "#f6f1fa", // pale purple accent
+    buttonColor: "#beacf4",
+    cardBg: "#f6f1fa",
     category: "Modular",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -281,8 +281,8 @@ export const wheels = [
       "redwhite.modular2.webp",
       "redwhite.modular3.webp",
     ],
-    buttonColor: "#fca7ae", // pale red
-    cardBg: "#fff0f2", // pale red accent
+    buttonColor: "#fca7ae",
+    cardBg: "#fff0f2",
     category: "Modular",
     size: ["22", "21", "19"],
     compatibleCars: ["BMW", "Mercedes"],
@@ -304,8 +304,8 @@ export const wheels = [
       "satinblack2.flow.webp",
       "satinblack3.flow.webp",
     ],
-    buttonColor: "#222222", // black
-    cardBg: "#f5f5f5", // light black accent
+    buttonColor: "#222222",
+    cardBg: "#f5f5f5",
     category: "Flow",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],
@@ -323,8 +323,8 @@ export const wheels = [
     price: 584,
     currency: "euro",
     images: ["silver.flow1.webp", "silver.flow2.webp", "silver.flow3.webp"],
-    buttonColor: "#c0c0c0", // silver
-    cardBg: "#f4f4f4", // silver (light)
+    buttonColor: "#c0c0c0",
+    cardBg: "#f4f4f4",
     category: "Flow",
     size: ["22", "21", "19"],
     compatibleCars: ["Audi", "VW", "Mercedes"],

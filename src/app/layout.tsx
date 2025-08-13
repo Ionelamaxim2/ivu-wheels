@@ -101,7 +101,6 @@ export default function RootLayout({
           crossOrigin=""
         />
 
-        {/* Keep only critical brand asset preload */}
         <link
           rel="preload"
           href="/wheelsshop/Icon.svg"
@@ -109,7 +108,6 @@ export default function RootLayout({
           type="image/svg+xml"
         />
 
-        {/* Preload only video metadata via browser fetch; we avoid preloading heavy gallery images here */}
         <link
           rel="preload"
           href="/wheelsshop/HEROVIDEO.mp4"

@@ -70,7 +70,7 @@ export default function TermsPage() {
         </div>
       </nav>
 
-      {/* Content */}
+      {/* CONTINUT */}
       <div
         style={{
           maxWidth: "800px",

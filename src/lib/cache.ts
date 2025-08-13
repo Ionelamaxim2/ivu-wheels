@@ -3,7 +3,7 @@
 interface CacheItem<T> {
   data: T;
   timestamp: number;
-  ttl: number; // Time to live in milliseconds
+  ttl: number; 
 }
 
 class Cache {

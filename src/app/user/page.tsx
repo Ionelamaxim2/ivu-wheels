@@ -82,7 +82,7 @@ export default function UserPage() {
           gap: isMobile ? 16 : 24,
         }}
       >
-        {/* Header + Stats */}
+        {/* HEADER + STATS */}
         <div style={{ display: "grid", gap: isMobile ? 12 : 16 }}>
           <div style={{ ...glass, padding: isMobile ? 16 : 24 }}>
             <div

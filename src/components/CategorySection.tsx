@@ -53,7 +53,7 @@ export default function CategorySection() {
             key={category.name}
             style={{ marginBottom: category.name === "Flow" ? "3rem" : "0" }}
           >
-            {/* Category Section with Gray Background */}
+            {/* CATEGORIE - BG GRI */}
             <div
               style={{
                 background: "rgba(128, 128, 128, 0.4)",
@@ -62,7 +62,7 @@ export default function CategorySection() {
                 margin: "0 2rem",
               }}
             >
-              {/* Category Header - Responsive */}
+              {/* CATEGORIE - RESPONSIV */}
               <div
                 style={{
                   textAlign: "center",
@@ -135,10 +135,10 @@ export default function CategorySection() {
                 </Link>
               </div>
 
-              {/* Product Cards - Glass Card Style */}
+              {/* CARTE - STIL GLASS */}
               {isMobile ? (
                 <>
-                  {/* First row - 2 cards */}
+                  {/* PRIMA RINDA - 2 CARTE */}
                   <div
                     style={{
                       display: "flex",
@@ -158,7 +158,7 @@ export default function CategorySection() {
                       </Link>
                     ))}
                   </div>
-                  {/* Second row - 1 card centered */}
+                  {/* A DOUA RINDA - 1 CARD CENTRAT */}
                   {category.wheels.length > 2 && (
                     <div
                       style={{
@@ -200,7 +200,7 @@ export default function CategorySection() {
               )}
             </div>
 
-            {/* Car Image after Performance category */}
+            {/* IMAGINE MASINA PERFORMANCE */}
             {category.name === "Performance" && (
               <div
                 style={{
@@ -226,7 +226,7 @@ export default function CategorySection() {
               </div>
             )}
 
-            {/* Car Image for Modular category */}
+            {/* IMAGINE MASINA MODULAR */}
             {category.name === "Modular" && (
               <div
                 style={{
@@ -253,8 +253,6 @@ export default function CategorySection() {
             )}
           </div>
         ))}
-
-        {/* Footer removed; page uses global FooterSection now */}
       </div>
     </div>
   );

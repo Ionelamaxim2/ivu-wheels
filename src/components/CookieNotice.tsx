@@ -46,7 +46,7 @@ export default function CookieNotice() {
 
   return (
     <>
-      {/* Overlay */}
+      {/* OVERLAY */}
       <div
         style={{
           position: "fixed",
@@ -61,7 +61,7 @@ export default function CookieNotice() {
         onClick={handleAccept}
       />
 
-      {/* Cookie Notice */}
+      {/* NOTIFICARE COOKIE */}
       <div
         style={{
           position: "fixed",
@@ -87,7 +87,7 @@ export default function CookieNotice() {
             gap: "1rem",
           }}
         >
-          {/* Cookie Icon */}
+          {/* COOKIE ICON */}
           <div
             style={{
               width: "40px",

@@ -576,7 +576,7 @@ export default function PaymentPage() {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
+            {/* BUTON NAVIGATIE */}
             <div
               style={{
                 display: "flex",
@@ -619,7 +619,7 @@ export default function PaymentPage() {
             </div>
           </div>
 
-          {/* Right Side - Order Summary */}
+          {/* Right Side - SUMAR */}
           <div
             style={{
               background: "rgba(255, 255, 255, 0.05)",
@@ -629,7 +629,7 @@ export default function PaymentPage() {
               fontFamily: "Gruppo, Arial, sans-serif",
             }}
           >
-            {/* Cart Items */}
+            {/* ITEMII CART */}
             {cartItems.length > 0 ? (
               cartItems.map((item, index) => (
                 <div
@@ -720,7 +720,7 @@ export default function PaymentPage() {
               </div>
             )}
 
-            {/* Summary */}
+            {/* SUMAR */}
             <div
               style={{
                 borderTop: "1px solid rgba(255, 255, 255, 0.1)",

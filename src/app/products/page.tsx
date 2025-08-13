@@ -70,7 +70,7 @@ export default function ProductsPage() {
         fontFamily: "Gruppo, Arial, sans-serif",
       }}
     >
-      {/* Header (match other pages) */}
+      {/* Header */}
       <div
         style={{
           display: "flex",
@@ -259,7 +259,6 @@ export default function ProductsPage() {
           FILTER
         </button>
 
-        {/* Expandable Filter Section */}
         {isFilterOpen && (
           <div
             style={{
@@ -271,7 +270,6 @@ export default function ProductsPage() {
               backdropFilter: "blur(20px)",
             }}
           >
-            {/* Model Filter (mapped to category selection) */}
             <div style={{ marginBottom: "2rem" }}>
               <h3
                 style={{
@@ -306,7 +304,6 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            {/* Car Brand Filter */}
             <div style={{ marginBottom: "2rem" }}>
               <h3
                 style={{
@@ -341,7 +338,6 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            {/* Size Filter */}
             <div>
               <h3
                 style={{
@@ -378,7 +374,6 @@ export default function ProductsPage() {
           </div>
         )}
 
-        {/* Products Grid */}
         <div
           style={{
             display: "grid",

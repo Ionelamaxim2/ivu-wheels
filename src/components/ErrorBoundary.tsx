@@ -143,7 +143,7 @@ function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
         textAlign: "center",
       }}
     >
-      {/* Error Icon */}
+      {/* ICON DE ERORR */}
       <div
         style={{
           width: "64px",
@@ -172,7 +172,7 @@ function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
         </svg>
       </div>
 
-      {/* Error Message */}
+      {/* MESAJ DE ERORR */}
       <h2
         style={{
           color: "white",
@@ -198,7 +198,7 @@ function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
         Please try again or contact support if the problem persists.
       </p>
 
-      {/* Action Buttons */}
+      {/* BUTOANE DE ACTIUNE */}
       <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
         <button
           onClick={onReset}
@@ -252,7 +252,7 @@ function ErrorFallback({ error, onReset }: ErrorFallbackProps) {
         </button>
       </div>
 
-      {/* Technical Details (Expandable) */}
+      {/* TEHNICAL DETAILS (EXPANDABLE) */}
       {error && (
         <details
           style={{

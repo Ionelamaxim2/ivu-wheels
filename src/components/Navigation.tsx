@@ -67,7 +67,7 @@ export default function Navigation() {
             IVU Wheels
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* NAVIGATIE DESKTOP */}
           <div style={navLinksStyle}>
             <Link
               href="/"

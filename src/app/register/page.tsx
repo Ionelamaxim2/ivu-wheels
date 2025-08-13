@@ -716,7 +716,7 @@ export default function RegisterPage() {
         </form>
       </div>
 
-      {/* Footer - positioned at bottom */}
+      {/* Footer */}
       <div
         style={{
           position: "absolute",

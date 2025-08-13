@@ -176,9 +176,6 @@ export default function ProductPage({ params }: ProductPageProps) {
     <div
       style={{ backgroundColor: "#ffffff", minHeight: "100vh", color: "black" }}
     >
-      {/* Toast notifications handled by ToastProvider */}
-
-      {/* Header */}
       <div
         style={{
           display: "flex",
@@ -334,7 +331,6 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
       </div>
 
-      {/* Breadcrumbs */}
       {!isMobile && (
         <div
           style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 2rem" }}
@@ -413,7 +409,6 @@ export default function ProductPage({ params }: ProductPageProps) {
           marginTop: isMobile ? "0" : "0",
         }}
       >
-        {/* Back Button */}
         <div
           style={{
             padding: "0rem 1rem",
@@ -488,14 +483,12 @@ export default function ProductPage({ params }: ProductPageProps) {
             paddingTop: isMobile ? "0.5rem" : "2rem",
           }}
         >
-          {/* Left Side - Diagonal Image Carousel */}
           <div
             style={{
               position: "relative",
               height: isMobile ? "400px" : "600px",
             }}
           >
-            {/* Carousel Container */}
             <div
               style={{
                 position: "relative",
@@ -506,7 +499,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                 justifyContent: "center",
               }}
             >
-              {/* Previous Image (Left) */}
               <div
                 style={{
                   position: "absolute",
@@ -540,7 +532,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                 />
               </div>
 
-              {/* Main Image (Center) */}
               <div
                 style={{
                   position: "absolute",
@@ -568,7 +559,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                 />
               </div>
 
-              {/* Next Image (Right) */}
               <div
                 style={{
                   position: "absolute",
@@ -603,7 +593,6 @@ export default function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
 
-            {/* Navigation Arrows */}
             {isMobile ? (
               <div
                 style={{
@@ -778,9 +767,7 @@ export default function ProductPage({ params }: ProductPageProps) {
               PRICE: €{wheel.price},00
             </div>
 
-            {/* Content wrapper to push button to bottom */}
             <div style={{ flex: 1 }}>
-              {/* Car and Size Selection - Side by Side */}
               <div
                 style={{
                   display: "flex",
@@ -848,7 +835,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                   )}
                 </div>
 
-                {/* Size Selection */}
                 <div style={{ flex: 1 }}>
                   <select
                     value={selectedSize}
@@ -909,7 +895,6 @@ export default function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
 
-            {/* Quantity and Add to Cart */}
             <div style={{ marginBottom: "2rem" }}>
               <div
                 style={{
@@ -1004,7 +989,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                   </button>
                 </div>
 
-                {/* Add to Cart Button - Same row on desktop, separate on mobile */}
                 {!isMobile && (
                   <button
                     onClick={handleAddToCart}
@@ -1049,7 +1033,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                 )}
               </div>
 
-              {/* Add to Cart Button - Separate Row on Mobile Only */}
               {isMobile && (
                 <div style={{ width: "100%", marginTop: "1rem" }}>
                   <button
@@ -1096,7 +1079,6 @@ export default function ProductPage({ params }: ProductPageProps) {
               )}
             </div>
 
-            {/* Wheel Info */}
             <div
               style={{
                 padding: "1.5rem",
@@ -1140,7 +1122,6 @@ export default function ProductPage({ params }: ProductPageProps) {
           </div>
         </div>
 
-        {/* Similar Products */}
         <div
           style={{
             marginTop: isMobile ? "4rem" : "9rem",
@@ -1323,7 +1304,6 @@ export default function ProductPage({ params }: ProductPageProps) {
         <FooterSection />
       </div>
 
-      {/* SEO Structured Data */}
       <ProductStructuredData
         product={{
           id: wheel.id,

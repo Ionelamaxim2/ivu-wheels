@@ -1,6 +1,6 @@
 import React from "react";
 
-import Home from "./pages/Home"; // asigură-te că folosești Home.jsx din pages
+import Home from "./pages/Home";
 
 function App() {
   return (

@@ -56,7 +56,7 @@ export default function StatsSection() {
           padding: "0 2rem",
         }}
       >
-        {/* Stats Container with Gray Background */}
+        {/* CONTAINER BG GRI*/}
         <div
           style={{
             background: "rgba(128, 128, 128, 0.4)",
@@ -104,7 +104,7 @@ export default function StatsSection() {
           ))}
         </div>
 
-        {/* Title Section */}
+        {/* SECTIUNE TITLU*/}
         <div
           style={{
             textAlign: "center",
